@@ -20,14 +20,16 @@
 					<?= form_label('Pregunta','Pregunta') ?>
 					<?= form_input($pregunta) ?>
 				</div>
-				<div class="form-group">
-					<label class="radio-inline">
-						<input type="radio" name="preguntaAbierta">Abierta
-					</label>
-					<label class="radio-inline">
-						<input type="radio" name="preguntaMultple">Multiple
-					</label>
-				</div>
+				<form>
+					<div class="form-group">
+						<label class="radio-inline">
+							<input type="radio" name="pregunta">Abierta
+						</label>
+						<label class="radio-inline">
+							<input type="radio" name="pregunta">Multiple
+						</label>
+					</div>
+				</form>
 				<div align="center">
 			<a href="<?php echo $crearPregunta_url?>">
 				<input class="btn btn-success" type="submit" name="" value="Crear Pregunta">
