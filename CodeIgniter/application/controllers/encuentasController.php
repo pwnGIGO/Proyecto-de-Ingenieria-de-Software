@@ -11,7 +11,12 @@
 		}
 
 		function obtenerEncuentas(){
+			$this->load->view('layouts/headerAdmin');
+			//cargar los datos
+			//enviarlos
+			$this->load->view('Encuestas/ver_encuestas');
 
+			
 		}
 
 		function actualizarEncuesta($idEncuesta){
