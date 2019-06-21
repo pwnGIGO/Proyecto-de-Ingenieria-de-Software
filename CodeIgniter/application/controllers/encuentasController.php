@@ -1,8 +1,9 @@
 <?php
+
 	class EncuentasController extends CI_Controller{
 		function __construct(){
 			parent::__construct();
-			$this->load->model('encuestaModel');
+			$this->load->model('encuesta_model');
 		}
 
 		function crearEncuenta(){
