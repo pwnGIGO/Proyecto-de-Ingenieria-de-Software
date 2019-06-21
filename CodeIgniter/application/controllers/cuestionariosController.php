@@ -1,8 +1,9 @@
 <?php
+
 	class CuestionariosController extends CI_Controller{
 		function __construct(){
 			parent::__construct();
-			$this->load->model('cuestionarioModel');
+			$this->load->model('cuestionario_model');
 		}
 
 		function crearCuestionario(){
