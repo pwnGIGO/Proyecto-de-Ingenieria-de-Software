@@ -1,6 +1,6 @@
 		<?php
 			$pregunta = array(
-				'name' => 'Pregunta',
+				'name' => 'pregunta',
 				'placeholder' => 'Pregunta',
 				'required' => 'required'
 			);
@@ -15,15 +15,23 @@
 		?>
 
 		<div align="center">
-			<?= form_open('') ?>
+			<?= form_open($crearPregunta_url) ?>
 				<div class="form-group">
-					<?= form_label('Pregunta','pregunta') ?>
+					<?= form_label('Pregunta','Pregunta') ?>
 					<?= form_input($pregunta) ?>
 				</div>
 				<div class="form-group">
-					<?= form_label('Tipo','tipoPregunta') ?>
-					<?= form_input($tipoPregunta) ?>
+					<label class="radio-inline">
+						<input type="radio" name="preguntaAbierta">Abierta
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="preguntaMultple">Multiple
+					</label>
 				</div>
-				<?= form_submit('', 'Crear pregunta') ?>
+				<div align="center">
+			<a href="<?php echo $crearPregunta_url?>">
+				<input class="btn btn-success" type="submit" name="" value="Crear Pregunta">
+			</a>
+		</div>
 			<?= form_close()?>
 		</div>

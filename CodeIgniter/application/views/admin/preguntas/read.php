@@ -3,8 +3,9 @@
 			$crearPregunta_url = base_url() . "Admin/Crear_Pregunta";
 		?>
 		<div align="center">
-			<button  type="button" class="btn btn-success">Crear Pregunta</button>
-			<a href="<?php echo $crearPregunta_url?>">Crear Pregunta</a>
+			<a href="<?php echo $crearPregunta_url?>">
+				<input class="btn btn-success" type="button" name="" value="Crear Pregunta">
+			</a>
 		</div>
 		<br><br>
 		<table class="table table-hover">

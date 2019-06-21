@@ -15,7 +15,9 @@
 				'tipoPregunta' => $this->input->post('tipoPregunta')
 			);
 			$this->pregunta_model->create($dato);
-			$this->load->view('preguntas/read');
+			
+			// Regresa a la vista
+			redirect(base_url() . "Admin/Preguntas");
 		}
 
 		function obtenerPreguntas(){

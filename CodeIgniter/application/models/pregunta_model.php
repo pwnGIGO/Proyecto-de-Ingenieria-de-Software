@@ -13,7 +13,7 @@
 					'pregunta' => $pregunta['pregunta'],
 					'tipoPregunta' => $pregunta['tipoPregunta']
 			);
-			$this->db->insert('pregunta', $nuevo);
+			$this->db->insert('pregunta', $insert);
 		}
 
 		// Se obtienen todas las preguntas de la Base de Datos
