@@ -22,6 +22,7 @@
 
 		function obtenerPreguntas(){
 			$dato['preguntas'] = $this->pregunta_model->read();
+			return $dato;
 		}
 
 		function actualizarPregunta(){
@@ -38,5 +39,6 @@
 			// Se obtiene del url el id de la pregunta
 			$idProducto = $this->uri->segment(3);
 			$this->pregunta_model->delete($idProducto);
+			redirect(base_url() . "Admin/Preguntas");
 		}
 	}

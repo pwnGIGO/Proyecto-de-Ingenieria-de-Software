@@ -1,5 +1,5 @@
 <?php 
-
+	
 	class vistas_Admin_Controller extends CI_Controller{
 
 		function __construct(){
@@ -25,7 +25,6 @@
 		function view_Mostar_Preguntas(){
 			$data['preguntas'] = $this->pregunta_model->read();
 			$this->load->view('layouts/headerAdmin',$data);
-//			$this->load->view('layouts/headerAdmin');
 			$this->load->view('admin/preguntas/read');
 		}
 		function view_Actualizar_Pregunta(){

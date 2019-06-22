@@ -12,10 +12,11 @@
   </head>
   <body>
    <?php
+      $inicio_url = base_url() . "Usuario";
       $admin_url = base_url() . "Admin";
     ?>
     <nav class="navbar navbar-expand navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Usuario</a>
+      <a class="navbar-brand" href="<?php echo $inicio_url?>">Usuario</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
