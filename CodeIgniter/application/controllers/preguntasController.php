@@ -15,11 +15,14 @@
 				'tipoPregunta' => $this->input->post('tipoPregunta')
 			);
 			$this->pregunta_model->create($dato);
-			$this->load->view('preguntas/read');
+			
+			// Regresa a la vista
+			redirect(base_url() . "Admin/Preguntas");
 		}
 
 		function obtenerPreguntas(){
 			$dato['preguntas'] = $this->pregunta_model->read();
+			return $dato;
 		}
 
 		function actualizarPregunta(){
@@ -36,5 +39,6 @@
 			// Se obtiene del url el id de la pregunta
 			$idProducto = $this->uri->segment(3);
 			$this->pregunta_model->delete($idProducto);
+			redirect(base_url() . "Admin/Preguntas");
 		}
 	}
