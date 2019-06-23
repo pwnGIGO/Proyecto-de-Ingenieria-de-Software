@@ -8,16 +8,15 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Admin</title>
+    <title>Rodrigo:Soy el primero</title>
   </head>
   <body>
     <?php
       $preguntas_url = base_url() . "Admin/Preguntas";
       $usuario_url = base_url() . "Usuario";
-      $inicio_url = base_url() . "Admin";
     ?>
     <nav class="navbar navbar-expand navbar-dark bg-dark">
-      <a class="navbar-brand" href="<?php echo $inicio_url?>">Admin</a>
+      <a class="navbar-brand" href="#">Admin</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
