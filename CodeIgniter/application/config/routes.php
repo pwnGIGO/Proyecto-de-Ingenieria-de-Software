@@ -12,6 +12,8 @@ $route['default_controller'] = 'vistas_Usuario_Controller';
 // El usuario inicia sesion
 $route['Admin'] = "vistas_Admin_Controller";
 
+$route['Usuario/Encuestas']["get"] = "vistas_Usuario_Controller/view_Mostrar_Encuestas";
+
 
 
 
@@ -31,20 +33,28 @@ $route['Admin/Preguntas'] = "vistas_Admin_Controller/view_Mostar_Preguntas";
 //$route['Admin/Editar_Pregunta'] = "PreguntasController/actualizarPregunta";
 // Eliminar
 $route['Admin/Eliminar_Pregunta/:num'] = "preguntasController/eliminarPregunta";
-
-
-// Respuestas
-$route['Admin/Crea_una_respuesta'] = "vistas_Admin_Controller/view_Crear_Respuesta";
-$route['Admin/view_Crear_Respuesta'] = "RespuestasController/view_Crear_Respuesta";
-// Obtener
-$route['Admin/Respuestas'] = "vistas_Admin_Controller/view_Mostrar_Respuestas";
 // Editar
 //$route['Admin/Editar_Pregunta'] = "vistasController/view_Actualizar_Pregunta";
 //$route['Admin/Editar_Pregunta'] = "PreguntasController/actualizarPregunta";
+
+
+
+
+// Respuestas
+// Obtener
+$route['Admin/Respuestas'] = "vistas_Admin_Controller/view_Mostrar_Respuestas";
+//crear
+$route['Admin/Crear_Respuesta']["get"] = "vistas_Admin_Controller/view_Crear_Respuesta";
+$route['Admin/Crear_Respuesta']["post"] = "respuestasController/crearRespuesta";
 // Eliminar
 //$route['Admin/Eliminar_Respuesta/:num'] = "respuestasController/Eliminar_Respuesta";
 
 
+
+
 // Encuestas
+$route['Admin/Encuestas']["get"] = "encuestasController/obtenerEncuentas";
+
+
 
 // Cuestionarios...
