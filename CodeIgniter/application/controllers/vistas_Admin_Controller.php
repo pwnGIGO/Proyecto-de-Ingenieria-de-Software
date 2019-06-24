@@ -44,9 +44,7 @@
 		function view_Crear_Respuesta(){ 
 
 			$this->load->view('layouts/headerAdmin');
-			//aqui ponemos la vista de la creacion de la respuesta
-			//$this->load->view('admin/respuestas/create');.......giovani
-			$this->load->view('admin/respuestas/crea_una_respuesta');
+			$this->load->view('admin/respuestas/create');
 		}
 
 
@@ -60,8 +58,9 @@
 		}
 
 		function view_Mostrar_Encuestas(){
-
-
+			$data['encuestas'] =  $this->encuesta_model->read();
+			$this->load->view('layouts/headerAdmin');
+			$this->load->view('admin/encuestas/read',$data);
 		}
 
 		function view_Actualizar_Encuesta($idEncuesta){

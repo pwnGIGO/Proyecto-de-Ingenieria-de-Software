@@ -1,13 +1,6 @@
-		<?php    
-			/*<?php echo $eliminarRespuesta_url.$respuesta->idRespuesta?>
-			$eliminarRespuesta_url = base_url() . "Admin/Eliminar_Respuesta/";
-			*/
-		 ?>
-
 		<!-- Read -->
 		<?php
-			$crearRespuesta_url = base_url() . "Admin/Crear_Respuesta";
-			
+			$crearRespuesta_url = base_url() . "Admin/Crear_Una_Respuesta";
 		?>
 		<div align="center">
 			<a href="<?php echo $crearRespuesta_url?>">

@@ -23,7 +23,7 @@
 			$this->load->view('layouts/headerUser');
 			$data['encuestas'] =  $this->encuesta_model->read();
 			//enviamos toda la tabla objeto 
-			$this->load->view('vistas_Usuario/encuestas_u',$data);
+			$this->load->view('usuario/read',$data);
 
 		}
 
