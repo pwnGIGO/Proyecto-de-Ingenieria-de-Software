@@ -13,6 +13,7 @@
   <body>
    <?php
       $admin_url = base_url() . "Admin";
+      $encuestas_url = base_url(). "Usuario/Encuestas"
     ?>
     <nav class="navbar navbar-expand navbar-dark bg-dark">
       <a class="navbar-brand" href="#">Usuario</a>
@@ -23,7 +24,7 @@
       <div class="collapse navbar-collapse" id="navbarsExample02">
         <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-            <a class="nav-link" href="#">Encuestas</a>
+            <a class="nav-link" href="<?php echo $encuestas_url ?>">Encuestas</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Cuestionarios</a>

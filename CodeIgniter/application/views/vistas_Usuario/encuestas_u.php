@@ -1,7 +1,6 @@
-<h2>Encuestas</h2>
+<h2>Encuestas que puedes responder sin logearte...</h2>
 <br><br>
 
-<a href="#"><input style="display: block;" type="button" name="submit" value="+ crear Encuesta"></a>
 <br><br>
 
 	<?php 
@@ -12,8 +11,6 @@
 
 				<div style="display: inline-block;">
 					<a href="#"><img src="<?php echo $ruta_ima_encuestas ?>"></a>
-					<p><a href="#"><input type="button" name="eliminar" value="x eliminar"></a></p>
-					<p><?= $encuesta_aux->idObjeto ?></p>	
 				    <p><?= $encuesta_aux->nombreObjeto ?></p>
 				    <!--<p><?= $encuesta_aux->descripcionObjeto ?></p> -->
 				    <!--la descrpicon es muy grande y hay que acomodarla -->

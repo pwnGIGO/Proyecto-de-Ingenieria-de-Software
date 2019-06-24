@@ -12,6 +12,8 @@ $route['default_controller'] = 'vistas_Usuario_Controller';
 
 $route['Admin']["get"] = "vistas_Admin_Controller";
 
+$route['Usuario/Encuestas']["get"] = "vistas_Usuario_Controller/view_Mostrar_Encuestas";
+
 
 
 
@@ -30,12 +32,15 @@ $route['Admin/Editar_Pregunta']["put"] = "PreguntasController/actualizarPregunta
 // Eliminar
 $route['Admin/Eliminar_Pregunta']["delete"] = "PreguntasController/eliminarPregunta";
 
-$route['Admin/Encuestas']["get"] = "encuestasController/obtenerEncuentas";
+
 
 
 
 // Respuestas
 
 // Encuestas
+$route['Admin/Encuestas']["get"] = "encuestasController/obtenerEncuentas";
+
+
 
 // Cuestionarios...
