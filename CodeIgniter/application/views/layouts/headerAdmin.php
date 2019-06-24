@@ -8,11 +8,12 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Rodrigo:Soy el primero</title>
+    <title>Prueba</title>
   </head>
   <body>
     <?php
       $preguntas_url = base_url() . "Admin/Preguntas";
+      $respuestas_url = base_url() . "Admin/Respuestas";
       $usuario_url = base_url() . "Usuario";
     ?>
     <nav class="navbar navbar-expand navbar-dark bg-dark">
@@ -27,7 +28,7 @@
             <a class="nav-link" href="<?php echo $preguntas_url?>">Preguntas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Respuestas</a>
+           <a class="nav-link" href="<?php echo $respuestas_url?>">Respuestas</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Encuestas</a>
