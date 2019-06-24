@@ -37,12 +37,12 @@ $route['Admin/Eliminar_Pregunta/:num'] = "preguntasController/eliminarPregunta";
 $route['Admin/Crea_una_respuesta'] = "vistas_Admin_Controller/view_Crear_Respuesta";
 $route['Admin/view_Crear_Respuesta'] = "RespuestasController/view_Crear_Respuesta";
 // Obtener
-$route['Admin/Respuestas'] = "vistas_Admin_Controller/view_Mostar_Respuestas";
+$route['Admin/Respuestas'] = "vistas_Admin_Controller/view_Mostrar_Respuestas";
 // Editar
 //$route['Admin/Editar_Pregunta'] = "vistasController/view_Actualizar_Pregunta";
 //$route['Admin/Editar_Pregunta'] = "PreguntasController/actualizarPregunta";
 // Eliminar
-$route['Admin/Eliminar_Respuesta/:num'] = "respuestasController/Eliminar_Respuesta";
+//$route['Admin/Eliminar_Respuesta/:num'] = "respuestasController/Eliminar_Respuesta";
 
 
 // Encuestas
