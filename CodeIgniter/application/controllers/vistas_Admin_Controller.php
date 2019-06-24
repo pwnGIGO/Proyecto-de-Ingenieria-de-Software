@@ -34,7 +34,9 @@
 
 		// Respuestas
 		function view_Crear_Respuesta(){
-
+			//aqui ponemos la vista de la creacion de la respuesta
+			$this->load->view('layouts/headerAdmin');
+			$this->load->view('admin/crea_una_respuesta');
 		}
 
 		function view_Obtener_Respuestas(){

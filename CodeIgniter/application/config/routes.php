@@ -33,10 +33,13 @@ $route['Admin/Editar_Pregunta']["put"] = "PreguntasController/actualizarPregunta
 $route['Admin/Eliminar_Pregunta']["delete"] = "PreguntasController/eliminarPregunta";
 
 
-
-
-
 // Respuestas
+
+$route['Admin/Crear_Respuesta']["get"] = "vistas_Admin_Controller/view_Crear_Respuesta";
+$route['Admin/Crear_Respuesta']["post"] = "respuestasController/crearRespuesta";
+
+
+
 
 // Encuestas
 $route['Admin/Encuestas']["get"] = "encuestasController/obtenerEncuentas";
