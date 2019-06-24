@@ -33,10 +33,16 @@
 
 		// Respuestas
 		function view_Crear_Respuesta(){
+			$this->load->view('layouts/headerAdmin');
+			$this->load->view('admin/respuestas/create');
 
 		}
+//
+		function view_Mostrar_Respuestas(){
+			$data['respuestas'] = $this->respuesta_model->read();
+			$this->load->view('layouts/headerAdmin',$data);
+			$this->load->view('admin/respuestas/read');
 
-		function view_Obtener_Respuestas(){
 
 		}
 
