@@ -1,19 +1,29 @@
-<?php 
+<?php   
 	defined('BASEPATH') OR exit('No direct script access allowed');
 
-	class Respuesta_model extends CI_Model{
+	class Respuesta_model extends CI_Model{   
 		function __construct(){
 			parent::__construct();
 			$this->load->database();
+
 		}
 
 		// Inserta en Base de Datos una Pregunta
+		// 
 		function create($respuesta){
+			/*
 			$insert = array(
 					'respuesta' => $respuesta['respuesta'],
 					'tipo' => $respuesta['tipo']
 			);
 			$this->db->insert('respuesta', $insert);
+			*/
+			#$insert = array(
+			#		'respuesta' => $respuesta['respuesta_s']
+					#'tipo' => $respuesta['..']
+			#);
+			$this->db->insert('respuesta',array('respuesta' => $respuesta['Respuesta_s'] ));
+
 		}
 
 		// Se obtienen todas las preguntas de la Base de Datos

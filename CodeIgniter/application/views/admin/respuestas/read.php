@@ -1,7 +1,13 @@
+		<?php    
+			/*<?php echo $eliminarRespuesta_url.$respuesta->idRespuesta?>
+			$eliminarRespuesta_url = base_url() . "Admin/Eliminar_Respuesta/";
+			*/
+		 ?>
+
 		<!-- Read -->
 		<?php
-			$crearRespuesta_url = base_url() . "Admin/Crea_una_respuesta";
-			$eliminarRespuesta_url = base_url() . "Admin/Eliminar_Respuesta/";
+			$crearRespuesta_url = base_url() . "Admin/Crear_Respuesta";
+			
 		?>
 		<div align="center">
 			<a href="<?php echo $crearRespuesta_url?>">
@@ -30,7 +36,7 @@
 									<a href="#">
 										<input class="btn btn-info" type="button" name="Editar" value="Editar">
 									</a>
-									<a href="<?php echo $eliminarRespuesta_url.$respuesta->idRespuesta?>">
+									<a href="#">
 										<input class="btn btn-danger" type="button" name="Eliminar" value="Eliminar">
 									</a>
 								</td>

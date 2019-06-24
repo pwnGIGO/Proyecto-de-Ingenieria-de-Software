@@ -1,5 +1,5 @@
 		<!-- Read -->
-		<?php
+		<?php       
 			$crearPregunta_url = base_url() . "Admin/Crea_una_pregunta";
 			$eliminarPregunta_url = base_url() . "Admin/Eliminar_Pregunta/";
 		?>

@@ -1,6 +1,6 @@
 <?php 
 	
-	class vistas_Admin_Controller extends CI_Controller{
+	class vistas_Admin_Controller extends CI_Controller{     
 
 		function __construct(){
 			parent::__construct();
@@ -32,12 +32,7 @@
 		}
 
 		// Respuestas
-		function view_Crear_Respuesta(){
-			$this->load->view('layouts/headerAdmin');
-			$this->load->view('admin/respuestas/create');
-
-		}
-//
+		
 		function view_Mostrar_Respuestas(){
 			$data['respuestas'] = $this->respuesta_model->read();
 			$this->load->view('layouts/headerAdmin',$data);
@@ -45,6 +40,15 @@
 
 
 		}
+
+		function view_Crear_Respuesta(){ 
+
+			$this->load->view('layouts/headerAdmin');
+			//aqui ponemos la vista de la creacion de la respuesta
+			//$this->load->view('admin/respuestas/create');.......giovani
+			$this->load->view('admin/respuestas/crea_una_respuesta');
+		}
+
 
 		function view_Eliminar_Respuesta($idRespuesta){
 
@@ -56,6 +60,7 @@
 		}
 
 		function view_Mostrar_Encuestas(){
+
 
 		}
 

@@ -14,11 +14,16 @@
 
 		function index(){
 			$this->load->view('layouts/headerUser');
+			$this->load->model('encuesta_model');
 		}
 
 
 		// Encuestas
 		function view_Mostrar_Encuestas(){
+			$this->load->view('layouts/headerUser');
+			$data['encuestas'] =  $this->encuesta_model->read();
+			//enviamos toda la tabla objeto 
+			$this->load->view('vistas_Usuario/encuestas_u',$data);
 
 		}
 
