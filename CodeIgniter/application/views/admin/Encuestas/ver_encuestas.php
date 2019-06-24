@@ -1,8 +1,11 @@
-<h2>Encuestas</h2>
+<div align="center"><h2>Encuestas Administrador</h2></div>
 <br><br>
 
-<a href="#"><input style="display: block;" type="button" name="submit" value="+ crear Encuesta"></a>
+<div align="center">
+<a href="#"><input class="btn btn-success" type="button" name="submit" value="+ crear Encuesta"></a>
 <br><br>
+</div>
+
 
 	<?php 
 		$ruta_ima_encuestas = base_url()."assets/imagenes/cuestionario.png";
@@ -10,9 +13,9 @@
 		if ($encuestas) {		
 			foreach ($encuestas->result() as $encuesta_aux) {  ?>
 
-				<div style="display: inline-block;">
+				<div style="display: inline-block; margin:20px; text-align: center;">
 					<a href="#"><img src="<?php echo $ruta_ima_encuestas ?>"></a>
-					<p><a href="#"><input type="button" name="eliminar" value="x eliminar"></a></p>
+					<p><a href="#"><input class="btn btn-success" type="button" name="eliminar" value="x eliminar"></a></p>
 					<p><?= $encuesta_aux->idObjeto ?></p>	
 				    <p><?= $encuesta_aux->nombreObjeto ?></p>
 				    <!--<p><?= $encuesta_aux->descripcionObjeto ?></p> -->

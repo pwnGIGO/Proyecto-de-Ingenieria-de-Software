@@ -24,10 +24,12 @@
                                 <?= form_label('Escribe tu respuesta') ?>
                                 <?= form_input($respuesta) ?>
                             </div>
-                            
-                            <div class="text-center">
-								<?= form_submit('','Crear_Respuesta') ?>
+
+                            <div align="center">
+                                    <input class="btn btn-success" type="submit" name="" value="Crear_respuesta">
+                                
                             </div>
+        
 
 
                         </div>

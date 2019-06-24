@@ -1,10 +1,8 @@
-		<?php 
+		<?php    
 			/*<?php echo $eliminarRespuesta_url.$respuesta->idRespuesta?>
 			$eliminarRespuesta_url = base_url() . "Admin/Eliminar_Respuesta/";
 			*/
 		 ?>
-
-
 
 		<!-- Read -->
 		<?php
