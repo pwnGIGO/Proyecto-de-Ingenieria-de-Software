@@ -7,7 +7,14 @@
 		}
 
 		function crearCuestionario(){
-
+			//aaqui creamos la respuesta y la subimos
+			$dato = array(
+				'nameCuestionario' => $this->input->post('nombre'),
+				'desCuestionario' => $this->input->post('descripcion')
+			);
+			$this->cuestionario_model->create($dato);
+			// Regresa a la vista
+			redirect(base_url() . "Admin/Crear_Un_Cuestionario");
 		}
 
 		function obtenerCuestionarios(){

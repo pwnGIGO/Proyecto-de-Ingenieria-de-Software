@@ -16,7 +16,8 @@
       $preguntas_url = base_url() . "Admin/Preguntas";
       $respuestas_url = base_url() . "Admin/Respuestas";
       $usuario_url = base_url() . "Usuario";
-      $encuestas_url = base_url(). "Admin/Encuestas"
+      $encuestas_url = base_url(). "Admin/Encuestas";
+      $crearCuestionario_url = base_url(). "Admin/Crear_Un_Cuestionario";
     ?>
     <nav class="navbar navbar-expand navbar-dark bg-dark">
       <a class="navbar-brand" href="<?php echo $inicio_url?>">Admin</a>
@@ -36,7 +37,7 @@
             <a class="nav-link" href="<?php echo $encuestas_url?>">Encuestas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Cuestionarios</a>
+            <a class="nav-link" href="<?php echo $crearCuestionario_url?>">Cuestionarios</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?php echo $usuario_url?>">Logout</a>

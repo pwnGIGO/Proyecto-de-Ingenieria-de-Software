@@ -40,3 +40,10 @@ $route['Admin/Encuestas'] = "vistas_Admin_Controller/view_Mostrar_Encuestas";
 
 
 /* Seccion de Cuestionarios*/
+$route['Admin/Crear_Un_Cuestionario'] = "vistas_Admin_Controller/view_Crear_Cuestionario";
+$route['Admin/Crear_Cuestionario'] = "cuestionariosController/crearCuestionario";
+
+
+
+
+
