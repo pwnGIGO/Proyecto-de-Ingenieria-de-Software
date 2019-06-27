@@ -39,7 +39,7 @@ $route['Admin/Crea_una_encuesta'] = "vistas_Admin_Controller/view_Crear_Encuesta
 $route['Admin/Crear_Encuesta'] = "EncuestasController/crearEncuesta";
 $route['Admin/Encuestas'] = "vistas_Admin_Controller/view_Mostrar_Encuestas";
 
-
-
-
 /* Seccion de Cuestionarios*/
+$route['Admin/Crear_Un_Cuestionario'] = "vistas_Admin_Controller/view_Crear_Cuestionario";
+$route['Admin/Crear_Cuestionario'] = "cuestionariosController/crearCuestionario";
+

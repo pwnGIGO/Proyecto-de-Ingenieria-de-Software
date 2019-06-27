@@ -71,7 +71,8 @@
 
 		// Cuestionarios
 		function view_Crear_Cuestionario(){
-
+			$this->load->view('layouts/headerAdmin');
+			$this->load->view('admin/cuestionarios/create');
 		}
 
 		function view_Mostrar_Cuestionarios(){
