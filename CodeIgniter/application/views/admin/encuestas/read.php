@@ -4,7 +4,8 @@
 <br><br>
 
 <div align="center">
-<a href="<?php echo $crearEncuesta_url?>"><input class="btn btn-success" type="button" name="submit" value="+ crear Encuesta"></a>
+<a href="<?php echo $crearEncuesta_url?>">
+				<input class="btn btn-success" type="button" name="" value="+ Crear Encuesta">
 <br><br>
 </div>
 

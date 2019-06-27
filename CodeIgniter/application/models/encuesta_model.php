@@ -8,7 +8,7 @@
 		}
 
 		function create($objeto){
-			 $insert = array(
+			  $insert = array(
 					'nombreObjeto' => $objeto['nombreObjeto'],
 					 'descripcionObjeto' => $objeto['descripcionObjeto'],
 				     'tipoObjeto' =>  $objeto['tipoObjeto'],
