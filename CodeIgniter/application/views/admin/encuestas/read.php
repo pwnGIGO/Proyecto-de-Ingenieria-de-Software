@@ -1,8 +1,11 @@
+<?php   $crearEncuesta_url = base_url() . "Admin/Crea_una_encuesta";	?>
+
 <div align="center"><h2>Encuestas Administrador</h2></div>
 <br><br>
 
 <div align="center">
-<a href="#"><input class="btn btn-success" type="button" name="submit" value="+ crear Encuesta"></a>
+<a href="<?php echo $crearEncuesta_url?>">
+				<input class="btn btn-success" type="button" name="" value="+ Crear Encuesta">
 <br><br>
 </div>
 
