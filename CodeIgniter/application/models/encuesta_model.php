@@ -7,7 +7,15 @@
 			
 		}
 
-		function create(){
+		function create($objeto){
+			 $insert = array(
+					'nombreObjeto' => $objeto['nombreObjeto'],
+					 'descripcionObjeto' => $objeto['descripcionObjeto'],
+				     'tipoObjeto' =>  $objeto['tipoObjeto'],
+				     'fecha_inicio' =>  $objeto['fecha_inicio'],
+				     'fecha_fin' =>  $objeto['fecha_fin']
+			);
+			$this->db->insert('objeto', $insert);
     
 		}
 
