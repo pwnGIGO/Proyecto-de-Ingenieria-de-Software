@@ -7,6 +7,17 @@
 		}
 
 		function crearEncuenta(){
+			$dato = array(
+				'nombreObjeto' => $this->input->post('nombreObjeto'),
+					 'descripcionObjeto' => $this->input->post('descripcionObjeto'),
+				     'tipoObjeto' => $this->input->post('tipoObjeto'),
+				     'fecha_inicio' => $this->input->post('fecha_inicio'),
+				     'fecha_fin' => $this->input->post('fecha_fin')
+			);
+			$this->encuesta_model->create($dato);
+			
+			
+			redirect(base_url() . "Admin/Encuestas");
 
 		}
 

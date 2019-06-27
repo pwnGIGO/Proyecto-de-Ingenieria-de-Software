@@ -54,6 +54,8 @@
 
 		// Encuestas
 		function view_Crear_Encuesta(){
+			 $this->load->view('layouts/headerAdmin');
+			$this->load->view('admin/encuestas/create');
 
 		}
 

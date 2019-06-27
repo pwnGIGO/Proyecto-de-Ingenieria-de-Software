@@ -36,6 +36,8 @@ $route['Admin/Crear_Respuesta'] = "respuestasController/crearRespuesta";
 
 /* Seccion de Encuestas*/
 $route['Admin/Encuestas'] = "vistas_Admin_Controller/view_Mostrar_Encuestas";
+$route['Admin/Crea_una_encuesta'] = "vistas_Admin_Controller/view_Crear_Encuesta";
+$route['Admin/Crear_Encuesta'] = "EncuestasController/crearEncuesta";
 
 
 
