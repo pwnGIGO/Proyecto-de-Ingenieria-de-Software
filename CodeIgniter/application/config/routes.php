@@ -1,42 +1,66 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+/*
+	Las palabras en español: crear, actualizar,etc
+	se refiere a las vistas
+	Las palabras en ingles: create, update, etc
+	se refiere al metodo que llama al modelo
+*/
+
+/*
+	El llamado al controlador sin ningun metodo, 
+	se refiere al metodo por default, el index
+*/
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-// Si recibes por url "direccion" entonces ejecuta "controlador/metodo"
+/******************* USUARIO COMÚN ***********************/
+$route['default_controller'] = 'indexController';
 
-/*******************LOGIN***********************/
-// El usuario inicia sesion
-$route['Admin'] = "vistas_Admin_Controller";
-// El admin cierra sesion
-$route['Usuario'] = 'vistas_Usuario_Controller';
+/*******************USUARIO LOGEADO***********************/
 
+// Responder Encuestas
+$route['Inicio'] = 'indexController/indexAdmin';
 
-/*******************USUARIO***********************/
-$route['default_controller'] = 'vistas_Usuario_Controller';
-$route['Usuario/Encuestas'] = "vistas_Usuario_Controller/view_Mostrar_Encuestas";
-
-
-
-/*******************ADMIN***********************/
-
-
-/* Seccion de Preguntas*/
-$route['Admin/Crea_una_pregunta'] = "vistas_Admin_Controller/view_Crear_Pregunta";
-$route['Admin/Crear_Pregunta'] = "PreguntasController/crearPregunta";
-$route['Admin/Preguntas'] = "vistas_Admin_Controller/view_Mostar_Preguntas";
-$route['Admin/Eliminar_Pregunta/:num'] = "preguntasController/eliminarPregunta";
-
-/* Seccion de Respuestas*/
-$route['Admin/Respuestas'] = "vistas_Admin_Controller/view_Mostrar_Respuestas";
-$route['Admin/Crear_Una_Respuesta'] = "vistas_Admin_Controller/view_Crear_Respuesta";
-$route['Admin/Crear_Respuesta'] = "respuestasController/crearRespuesta";
 
 /* Seccion de Encuestas*/
-$route['Admin/Encuestas'] = "vistas_Admin_Controller/view_Mostrar_Encuestas";
+$route['Encuestas'] = "encuestasController";
+$route['Encuestas/Crear'] = "encuestasController/crearView";
+$route['Encuestas/create'] = "encuestasController/crear";
+$route['Encuestas/Editar/:num'] = "encuestasController/actualizarView";
+$route['Encuestas/update/:num'] = "encuestasController/actualizar";
+$route['Encuestas/delete/:num'] = "encuestasController/eliminar";
+
+/* Seccion de Cuestionarios/Preguntas/Respuestas */
+
+// Cuestionarios
+$route['Cuestionarios'] = "cuestionariosController";
+$route['Cuestionarios/Crear'] = "cuestionariosController/crearView";
+$route['Cuestionarios/create'] = "cuestionariosController/crear";
+$route['Cuestionarios/Editar/:num'] = "cuestionariosController/actualizarView";
+$route['Cuestionarios/update/:num'] = "cuestionariosController/actualizar";
+$route['Cuestionarios/delete/:num'] = "cuestionariosController/eliminar";
+
+// Preguntas
+$route['Cuestionarios/Preguntas/:num'] = "preguntasController";
+$route['Cuestionarios/Preguntas/Crear'] = "preguntasController/crearView";
+$route['Cuestionarios/Preguntas/create'] = "preguntasController/crear";
+$route['Cuestionarios/Preguntas/Editar/:num'] = "preguntasController/actualizarView";
+$route['Cuestionarios/Preguntas/update/:num'] = "preguntasController/actualizar";
+$route['Cuestionarios/Preguntas/delete/:num'] = "preguntasController/eliminar";
+
+//Respuestas
+$route['Cuestionarios/Preguntas/Respuestas/:num'] = "respuestasController";
+$route['Cuestionarios/Preguntas/Respuestas/Crear'] = "respuestasController/crearView";
+$route['Cuestionarios/Preguntas/Respuestas/create'] = "respuestasController/crear";
+$route['Cuestionarios/Preguntas/Respuestas/Editar/:num'] = "respuestasController/actualizarView";
+$route['Cuestionarios/Preguntas/Respuestas/update/:num'] = "respuestasController/actualizar";
+$route['Cuestionarios/Preguntas/Respuestas/delete/:num'] = "respuestasController/eliminar";
 
 
 
-/* Seccion de Cuestionarios*/
+
+
+/*******************LOGIN***********************/

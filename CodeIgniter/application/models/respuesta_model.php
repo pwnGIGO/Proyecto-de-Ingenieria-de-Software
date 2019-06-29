@@ -27,7 +27,8 @@
 		}
 
 		// Se obtienen todas las preguntas de la Base de Datos
-		function read(){
+		function read($idPregunta){
+			$this->db->where("pregunta_idPregunta", $idPregunta);
 			$query = $this->db->get('respuesta');
 			if($query->num_rows() > 0){
 				return $query;

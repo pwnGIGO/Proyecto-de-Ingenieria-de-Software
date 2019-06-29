@@ -6,19 +6,36 @@
 			$this->load->model('encuesta_model');
 		}
 
-		function crearEncuenta(){
-
+		function index(){
+			$this->load->view('layouts/header');
+			$this->load->view('encuestas/index');
 		}
 
-		function obtenerEncuentas(){
-			$data['encuestas'] =  $this->encuesta_model->read();
+		function crearView(){  
+			echo "Vista Crear encuesta: ";
 		}
 
-		function actualizarEncuesta($idEncuesta){
-
+		function crear(){
+			echo "Crear Encuesta: ";
 		}
 
-		function eliminarEncuesta($idEncuesta){
-			
+		function actualizarView(){
+			$idEncuesta = $this->uri->segment(2);   
+			echo "Vista Actualizar Encuesta: " . $idEncuesta;
+		}
+
+		function actualizar(){
+			$idEncuesta = $this->uri->segment(2);   
+			echo "Actualizar Encuesta: " . $idEncuesta;
+		}
+
+		function eliminar(){
+			$idEncuesta = $this->uri->segment(2);   
+			echo "Eliminar Encuesta: " . $idEncuesta;
+		}
+
+		function obtener(){
+			$idEncuesta = $this->uri->segment(2);   
+			echo "Obtener Encuesta: " . $idEncuesta;
 		}
 	}

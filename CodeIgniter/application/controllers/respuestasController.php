@@ -2,56 +2,71 @@
 	defined('BASEPATH') OR exit('No direct script access allowed');
 
 	class RespuestasController extends CI_Controller{    
-		// Constructor del controlador de preguntas
+
 		function __construct(){
 			parent::__construct();
+			$this->load->model('pregunta_model');
 			$this->load->model('respuesta_model');
 		}
 
-		// Llama al modelo para guardar una pregunta nueva
-		function crearRespuesta(){
-			/*    giovani
-			$dato = array(
-				'respuesta' => $this->input->post('respuesta'),
-				'tipo' => $this->input->post('tipo')
-			);
-			$this->respuesta_model->create($dato);
+		function index(){
+			$idPregunta = $this->uri->segment(4);
+			$dato['respuestas']=$this->respuesta_model->read($idPregunta);
+
+			$dato['p'] = $this->pregunta_model->get($idPregunta);
+
+			$this->load->view('layouts/header');
+			$this->load->view('respuestas/index',$dato);
+
+		}
+
+		function crearView(){
+			echo "Vista crear Respuesta";
+		}
+		// Llama al modelo para guardar una Respuesta nueva
+		function crear(){
+			echo "Crear Preguna";
+			// $dato = array(
+			// 	'Respuesta' => $this->input->post('Respuesta'),
+			// 	'tipoRespuesta' => $this->input->post('tipoRespuesta')
+			// );
+			// $this->Respuesta_model->create($dato);
 			
-			
-			*/
-
-
-			//aaqui creamos la respuesta y la subimos
-			$dato = array(
-				'Respuesta_s' => $this->input->post('respuesta'),
-			);
-			$this->respuesta_model->create($dato);
-			// Regresa a la vista
-			redirect(base_url() . "Admin/Respuestas");
-			
-
+			// // Regresa a la vista
+			// redirect(base_url() . "Admin/Respuestas");
 		}
 
-		function obtenerRespuestas(){
-			$dato['respuesta'] = $this->respuesta_model->read();
-			return $dato;
+		
+		function actualizarView(){
+			$idRespuesta = $this->uri->segment(4);
+			echo "Vista actualizar Respuesta :" . $idRespuesta;
 		}
-		/* gio
-		function actualizarRespuesta(){
-			$respuesta = array(
-				'respuesta' => $this->input->post('respuesta'),
-				'tipo' => $this->input->post('tipo'),
-			);
-			// Se obtiene del url el id de la pregunta
-			$idProducto = $this->uri->segment(3);
-			$this->respuesta_model->update($idRespuesta, $respuesta);
+		function actualizar(){
+			$idRespuesta = $this->uri->segment(4);
+			echo "Actualizar Respuesta :" . $idRespuesta;
+			// $Respuesta = array(
+			// 	'Respuesta' => $this->input->post('Respuesta'),
+			// 	'tipoRespuesta' => $this->input->post('tipoRespuesta'),
+			// );
+			// // Se obtiene del url el id de la Respuesta
+			// $idProducto = $this->uri->segment(3);
+			// $this->Respuesta_model->update($idRespuesta, $Respuesta);
 		}
 
-		function eliminarRespuesta(){
-			// Se obtiene del url el id de la pregunta
-			$idProducto = $this->uri->segment(3);
-			$this->respuesta_model->delete($idProducto);
-			redirect(base_url() . "Admin/Respuestas");
+		function eliminar(){
+			$idRespuesta = $this->uri->segment(4);
+			echo "Eliminar Respuesta :" . $idRespuesta;
+		// 	// Se obtiene del url el id de la Respuesta
+		// 	$idProducto = $this->uri->segment(3);
+		// 	$this->Respuesta_model->delete($idProducto);
+		// 	redirect(base_url() . "Admin/Respuestas");
 		}
-		*/
+
+		function obtener(){
+			$idRespuesta = $this->uri->segment(4);
+			echo "Obtener Respuesta :" . $idRespuesta;
+			// $dato['preguntas'] = $this->pregunta_model->read();
+			// return $dato;
+		}
+
 	}

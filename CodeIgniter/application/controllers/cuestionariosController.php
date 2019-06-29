@@ -1,25 +1,53 @@
 <?php
-
+ 
 	class CuestionariosController extends CI_Controller{
-		function __construct(){
+		
+		function __construct(){  
 			parent::__construct();
 			$this->load->model('cuestionario_model');
+			$this->load->model('pregunta_cuestionario_model');
 		}
 
-		function crearCuestionario(){
-
+		// Vista principal para mostrar los cuestionarios
+		function index(){
+			$data['cuestionarios'] = $this->cuestionario_model->read();
+			$this->load->view('layouts/header');
+			$this->load->view('cuestionarios/index',$data);
+		}
+		
+		// Vista para crear un cuestionario
+		function crearView(){  
+			echo "Vista Crear Cuestionario: ";
 		}
 
-		function obtenerCuestionarios(){
-
+		function crear(){  
+			echo "Crear Cuestionario: ";
 		}
 
-		function actualizarCuestionario($idCuestionario){
-
+		// Vista para editar un cuestionario
+		function actualizarView(){ 
+			$idCuestionario = $this->uri->segment(3);   
+			echo "Vista Actualizar Cuestionario: " . $idCuestionario;
 		}
 
-		function eliminarCuestionario($idCuestionario){
+		function actualizar(){ 
+			$idCuestionario = $this->uri->segment(3);   
+			echo "Actualizar Cuestionario: " . $idCuestionario;
+		}
 
+		function eliminar(){
+			$idCuestionario = $this->uri->segment(3);   
+			echo "Eliminar Cuestionario: " . $idCuestionario;
+		}
+
+		function obtener(){
+			$idCuestionario = $this->uri->segment(3);
+			echo "Obtener Cuestionario: " . $idCuestionario;
+			// $data['pregunta_cuestionario'] = $this->pregunta_cuestionario_model->read($idCuestionario);
+			// //obtiene todas las preguntas relacionnadas a este cuestionario
+			// //
+			// $data['cuestionario']= $this->cuestionario_model->get($idCuestionario);
+			// $this->load->view('layouts/header');
+			// $this->load->view('cuestionarios/read',$data);	
 		}
 	}
-?>

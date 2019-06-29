@@ -47,4 +47,6 @@
 		function delete($idPregunta){
 			$this->db->delete('pregunta', array('idPregunta' => $idPregunta));
 		}
+
+		
 	}

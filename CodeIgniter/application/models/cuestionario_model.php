@@ -3,6 +3,7 @@
 	class Cuestionario_model extends CI_Model{
 		function __construct(){
 			parent::__construct();
+			$this->load->database();
 			
 		}
 
@@ -11,7 +12,20 @@
 		}
 
 		function read(){
+			//aqui
+			$query = $this->db->get('cuestionario');
+			if ($query->num_rows() > 0) return $query;
+			else return false;
+		}
 
+		function get($id){
+			$this->db->where("idCuestionario", $id);
+			$query = $this->db->get('cuestionario');
+			if($query->num_rows() > 0){
+				return $query;
+			}else{
+				return false;
+			}
 		}
 
 		function update(){
