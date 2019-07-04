@@ -7,8 +7,18 @@
 			
 		}
 
-		function create(){
+		function create($idCuestionario,$pregunta){
 
+					$this->db->where("pregunta",$pregunta);
+					$query = $this->db->get('pregunta');
+					foreach ($query->result() as $c) {
+						$var = $c->idPregunta;
+						$insert = array(
+							'cuestionario_idCuestionario'=>$idCuestionario,
+                        	'pregunta_idPregunta'=> $var,
+                        	'orden'=>'0'); 
+						$this->db->insert('pregunta_cuestionario', $insert);
+					}
 		}
 
 		function read($idCuestionario){
