@@ -22,7 +22,7 @@ $route['default_controller'] = 'indexController';
 /*******************USUARIO LOGEADO***********************/
 
 // Responder Encuestas
-$route['Inicio'] = 'indexController/indexAdmin';
+$route['Inicio'] = 'indexController/indexAdmin';  
 
 
 /* Seccion de Encuestas*/

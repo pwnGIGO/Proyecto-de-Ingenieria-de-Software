@@ -7,7 +7,11 @@
 			
 		}
 
-		function create(){
+		function create($data){
+			$insert = array(
+					'nombreCuestionario' => $data['nombre']
+			);
+			$this->db->insert('cuestionario', $insert);
 
 		}
 
