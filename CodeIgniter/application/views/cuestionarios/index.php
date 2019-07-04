@@ -29,7 +29,7 @@
 	<?php 
 		if($cuestionarios){		
 			foreach ($cuestionarios->result() as $cuestionario) {?>
-				<div style="display: inline-block; margin:20px;">
+				<div style="display: inline-block; margin:20px; text-align: left;">
 
 					<h4><?= $cuestionario->nombreCuestionario ?></h4>
 
