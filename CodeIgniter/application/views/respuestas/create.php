@@ -2,29 +2,42 @@
 			// Atributos de la caja de texto
 			$respuesta = array(
 				'name' => 'respuesta',
-				'placeholder' => 'Respuesta',
+				'placeholder' => '',
 				'required' => 'required'
 			);
-			// url para respuestasController/crearRespuesta............ de tipo post
-			$crearRespuesta_url = base_url() . "Admin/Crear_Respuesta";
+			
+			// url para preguntasController/crearPregunta Espera
+			$idPregunta = $this->uri->segment(5);
+			$crearRespuestas_url = base_url() . "Cuestionarios/Preguntas/Respuestas/create/".$idPregunta;
 		?>
 
 		<div class="container">
-			<?= form_open($crearRespuesta_url) ?>
-				<div class="card indigo form-white">
-					<div class="card-body">
-						<h3 class="text-center white-text py-3"><i class="fa fa-user"></i>Crear respuesta:</h3>
-						<h3 class="text-center white-text py-3"><i class="fa fa-user"></i> Aqui va la pregunta a responder</h3>
-						<div class="text-center">
-							<i class="fa fa-envelope prefix white-text"></i>
-							<?= form_label('Escribe tu respuesta') ?>
-							<?= form_input($respuesta) ?>
-						</div>
-
-						<div align="center">
-							<input class="btn btn-success" type="submit" name="" value="Crear Respuesta">
-						</div>
-					</div>
-				</div>
-			<?= form_close()?>
+			<div class="form-group">
+				<!-- label, input -->
+				<br>
+			</div>
+			<div class="form-group">
+			</div>
 		</div>
+		 <div class="container">
+		 	<?= form_open($crearRespuestas_url) ?>
+                <div class="card indigo form-white">
+                    <div class="card-body">
+                        <h2 class="text-center white-text py-3"><i class="fa fa-user"></i> Crear Respuesta</h2>
+                        <!--Body-->
+                        <div class="">
+                            <i class="fa fa-envelope prefix white-text"></i>
+                            <label><h5>Escribe tu respuesta:</h5></label>
+                            <input type="search" id="respuesta" name="respuesta" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required autocomplete="off">
+                        </div><br><br>
+                        <div class="text-center">
+                            <a href="<?php echo $crearRespuestas_url?>">
+								<input class="btn btn-success" type="submit" name="" value="Crear Respuesta">
+							</a>
+                        </div>
+                     </div>
+                </div>
+            <?= form_close()?>
+        </div>
+
+		

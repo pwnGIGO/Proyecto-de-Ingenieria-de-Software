@@ -8,22 +8,14 @@
 
 		}
 
-		// Inserta en Base de Datos una Pregunta
-		// 
-		function create($respuesta){
-			/*
+		// Inserta una respuesta a una pregunta
+		function create($idPregunta, $respuesta){
 			$insert = array(
-					'respuesta' => $respuesta['respuesta'],
-					'tipo' => $respuesta['tipo']
-			);
+				'idRespuesta' => 'Default',
+                'respuesta' => $respuesta,
+                'pregunta_idPregunta' => $idPregunta); 
 			$this->db->insert('respuesta', $insert);
-			*/
-			#$insert = array(
-			#		'respuesta' => $respuesta['respuesta_s']
-					#'tipo' => $respuesta['..']
-			#);
-			$this->db->insert('respuesta',array('respuesta' => $respuesta['Respuesta_s'] ));
-
+			
 		}
 
 		// Se obtienen todas las preguntas de la Base de Datos
@@ -37,7 +29,7 @@
 			}
 		}
 
-		// Se obtiene una pregunta en especifico de la Base de Datos
+		// Se obtiene una respuestas en especifico de la Base de Datos
 		function get($id){
 			$this->db->where("idRespuesta", $id);
 			$query = $this->db->get('respuesta');
@@ -48,13 +40,13 @@
 			}
 		}
 
-		// Se actualiza una pregunta en Base de Datos
+		// Se actualiza una respuesta en Base de Datos
 		function update($idRespuesta, $respuesta){
 			$this->db->where('idRespuesta', $idRespuesta);
 			$query = $this->db->update('respuesta', $respuesta);
 		}
 
-		// Se elimina la pregunta en Base de Datos
+		// Se elimina la respuesta en Base de Datos
 		function delete($idRespuesta){
 			$this->db->delete('respuesta', array('idPregunta' => $idRespuesta));
 		}
