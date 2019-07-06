@@ -45,8 +45,14 @@
 
 		// Se elimina la pregunta en Base de Datos
 		function delete($idPregunta){
-			$this->db->delete('pregunta', array('idPregunta' => $idPregunta));
-		}
-
-		
+			$this->db->where('idPregunta', $id);
+			$this->db->delete('pregunta'); 
+			if ($this->db->affected_rows() > 0) {
+				return true;
+			}
+			else{
+				return false;
+			}
+			
 	}
+}

@@ -46,8 +46,18 @@
 			$query = $this->db->update('respuesta', $respuesta);
 		}
 
-		// Se elimina la respuesta en Base de Datos
-		function delete($idRespuesta){
-			$this->db->delete('respuesta', array('idPregunta' => $idRespuesta));
-		}
+		// Se elimina la pregunta en Base de Datos
+		function delete($id){
+			$this->db->where('idRespuesta', $id);
+			$this->db->delete('respuesta'); 
+			if ($this->db->affected_rows() > 0) {
+				return true;
+			}
+			else{
+				return false;
+			}
+	}
+}
+
+		
 	}

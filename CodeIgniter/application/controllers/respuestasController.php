@@ -54,12 +54,10 @@
 		}
 
 		function eliminar(){
-			$idRespuesta = $this->uri->segment(4);
-			echo "Eliminar Respuesta :" . $idRespuesta;
-		// 	// Se obtiene del url el id de la Respuesta
-		// 	$idProducto = $this->uri->segment(3);
-		// 	$this->Respuesta_model->delete($idProducto);
-		// 	redirect(base_url() . "Admin/Respuestas");
+		$idRespuesta = $this->uri->segment(3);   
+		$this->respuesta_model->delete($idRespuesta);
+		echo "Se elimino la Respuesta: " . $idRespuesta;
+		//redirect("Cuestionarios/Preguntas");
 		}
 
 		function obtener(){
