@@ -11,7 +11,7 @@
 		function create($pregunta){
 			$insert = array(
 					'pregunta' => $pregunta['pregunta'],
-					'tipoPregunta' => $pregunta['tipoPregunta']
+					//'tipoPregunta' => $pregunta['tipoPregunta']
 			);
 			$this->db->insert('pregunta', $insert);
 		}

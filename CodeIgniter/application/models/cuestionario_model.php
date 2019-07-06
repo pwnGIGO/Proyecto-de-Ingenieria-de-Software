@@ -50,14 +50,15 @@
 									WHERE idPregunta ='.$pregunta->idPregunta.'';
 						    	$query = $this->db->query($query);
 						    	$dato1['respuestas']=$this->respuesta_model->read($idQuestion);
+						    	if($dato1['respuestas']){
 										foreach ($dato1['respuestas']->result() as $respuesta) {
 										echo $respuesta->idRespuesta . "<br>";
 											$query ='DELETE
 											FROM respuesta
 											WHERE idRespuesta ='.$respuesta->idRespuesta.'';
 								    		$query = $this->db->query($query);
-								    	
 										}
+									}
 				}
 				if(!empty($result)) return true; else { return false; } 	
 		}

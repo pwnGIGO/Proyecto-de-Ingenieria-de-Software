@@ -25,7 +25,7 @@
       <br>
       <div align="center">
          <a href="<?php echo $crearPregunta_url?>">
-            <input class="btn btn-success" type="button" name="" value="Crear Respuesta">
+            <input class="btn btn-success" type="button" name="" value="Crear Pregunta">
          </a>
       </div>
       <br><br>
