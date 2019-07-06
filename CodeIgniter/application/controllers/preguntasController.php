@@ -55,12 +55,11 @@
 		}
 
 		function eliminar(){
-			$idPregunta = $this->uri->segment(4);
-			echo "Eliminar pregunta :" . $idPregunta;
-		// 	// Se obtiene del url el id de la pregunta
-		// 	$idProducto = $this->uri->segment(3);
-		// 	$this->pregunta_model->delete($idProducto);
-		// 	redirect(base_url() . "Admin/Preguntas");
+		$idPregunta = $this->uri->segment(3);   
+		$this->pregunta_model->delete($idPregunta);
+		echo "Se elimino la Pregunta gp: " . $idPregunta;
+		//redirect("Cuestionarios/Preguntas");
+		
 		}
 
 		function obtener(){

@@ -36,9 +36,12 @@
 		}
 
 		function eliminar(){
-			$idCuestionario = $this->uri->segment(3);   
-			echo "Eliminar Cuestionario: " . $idCuestionario;
-		}
+		$idCuestionario = $this->uri->segment(3);   
+		$this->cuestionario_model->delete($idCuestionario);
+		echo "Se elimino el Cuestionario: " . $idCuestionario;
+		redirect("Cuestionarios");	
+	}
+	
 
 		function obtener(){
 			$idCuestionario = $this->uri->segment(3);

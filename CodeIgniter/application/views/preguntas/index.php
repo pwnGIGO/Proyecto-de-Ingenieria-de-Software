@@ -46,9 +46,10 @@
                            <a href="<?php echo $editarPregunta_url . $pregunta->idPregunta?>">
                               <input class="btn btn-info" type="button" name="Editar" value="Editar">
                            </a>
-                           <a href="<?php echo $eliminarPregunta_url . $pregunta->idPregunta?>">
-                              <input class="btn btn-danger" type="button" name="Eliminar" value="Eliminar">
-                           </a>
+                           <form href="<?php echo $eliminarPregunta_url ?>" method="post">
+                              <input type="hidden" name="idPregunta" value=" <?php echo $pregunta->idPregunta?>">
+                              <input class="btn btn-danger" type="submit" name="Eliminar" value="Eliminar">
+                           </form>
                         </td>
                      </tr>
                   <?php } ?>
