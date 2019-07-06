@@ -1,9 +1,11 @@
 		<!-- Read -->
 		<?php
 			// Respuestas
-			$crearRespuesta_url = base_url() . "Cuestionarios/Preguntas/Respuestas/Crear";
+			$idPregunta = $this->uri->segment(4);
+			$crearRespuesta_url = base_url() . "Cuestionarios/Preguntas/Respuestas/Crear/" . $idPregunta;
 			$editarRespuesta_url = base_url() . "Cuestionarios/Preguntas/Respuestas/Editar/";
 			$eliminarRespuesta_url = base_url() . "Cuestionarios/Preguntas/Respuestas/delete/";
+
 		?>
 		<div align="center">
 			<h2>Pregunta:</h2>
@@ -11,6 +13,7 @@
 				<?php
 		        foreach ($p->result() as $pe){
 		           echo $pe->pregunta; 
+		           $idPregunta = $pe->idPregunta;
 	            }
 	         ?>
 			</h3>
@@ -18,8 +21,8 @@
 		<br>
 		<div align="center">
 			<a href="<?php echo $crearRespuesta_url?>">
-				<input class="btn btn-success" type="button" name="" value="Crear Respuesta">
-			</a>
+            <input class="btn btn-success" type="button" name="" value="Crear Respuesta">
+         </a>
 		</div>
 		<br><br>
 		<div class="container">

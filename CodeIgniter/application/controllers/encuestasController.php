@@ -4,19 +4,37 @@
 		function __construct(){
 			parent::__construct();
 			$this->load->model('encuesta_model');
+			$this->load->model('cuestionario_model');
 		}
 
 		function index(){
+			//modelo
+			$data['encuestas'] = $this->encuesta_model->read();
 			$this->load->view('layouts/header');
-			$this->load->view('encuestas/index');
+			$this->load->view('encuestas/index',$data);
 		}
 
-		function crearView(){  
-			echo "Vista Crear encuesta: ";
+		function crearView(){ 
+			//para elegir un cuestinario
+			$data['cuestionarios'] = $this->cuestionario_model->read();
+			$this->load->view('layouts/header');
+			$this->load->view('encuestas/create',$data);
+
 		}
 
 		function crear(){
-			echo "Crear Encuesta: ";
+			//crea la encuesta en BD
+			$data = array(
+			'nombre' => $this->input->post('nombre'),
+			'inicio' => $this->input->post('fecha_inicio'),
+			'fin' => $this->input->post('fecha_fin'),
+			'numero_encuestas' => $this->input->post('numero_encuestas'),
+			'cuestionario_elegido' => $this->input->post('cuestionario_elegido')
+			);
+			$this->encuesta_model->create($data);
+			redirect(base_url()."Encuestas");
+
+
 		}
 
 		function actualizarView(){

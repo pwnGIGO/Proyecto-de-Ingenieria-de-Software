@@ -22,19 +22,23 @@
 
 		}
 		function crearView(){
-			echo "Vista crear pregunta";
+			//extaer segmento (4)
+			$this->id_p= $this->uri->segment(4);
+            $this->load->helper('form');
+            $this->load->view('layouts/header');
+		    $this->load->view('preguntas/create');    
 		}
 		// Llama al modelo para guardar una pregunta nueva
 		function crear(){
-			echo "Crear Preguna";
-			// $dato = array(
-			// 	'pregunta' => $this->input->post('pregunta'),
-			// 	'tipoPregunta' => $this->input->post('tipoPregunta')
-			// );
-			// $this->pregunta_model->create($dato);
-			
-			// // Regresa a la vista
-			// redirect(base_url() . "Admin/Preguntas");
+            $idCuestionario= $this->uri->segment(4);
+            $pregunta = $this->input->post('pregunta');
+            //para llenar la tabla de preguntas
+			$dato = array('pregunta' => $this->input->post('pregunta'));
+			 $this->pregunta_model->create($dato);
+		   //para rellenar la tabla intermedia 
+			$this->pregunta_cuestionario_model->create($idCuestionario,$pregunta);
+		    // Regresa a la vista
+            redirect(base_url() . "Cuestionarios/Preguntas/$idCuestionario");
 		}
 
 		

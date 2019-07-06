@@ -7,15 +7,20 @@
 			
 		}
 
-		function create(){
-    
+		function create($data){
+    		$insert = array(
+					'nombreEncuesta' => $data['nombre'],
+					'fechaInicial' => $data['inicio'],
+					'fechaFinal' => $data['fin'],
+					'numeroCuestionarios' => $data['numero_encuestas'],
+					'cuestionario_idCuestionario' => $data['cuestionario_elegido']
+			);
+			$this->db->insert('encuesta', $insert);
 		}
 
 		function read(){
 			//obtiene todas las encuestas de la bd
-			//el tipo 0 son los cuestionarios, el tipo 1 son las encuestas
-			$var_aux = 1;
-			$query = $this->db->get_where('objeto', array('tipoObjeto' => $var_aux ));
+			$query = $this->db->get('encuesta');
 			if ($query->num_rows() > 0) return $query;
 			else return false;
 		}

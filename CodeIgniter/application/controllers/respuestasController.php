@@ -11,29 +11,29 @@
 
 		function index(){
 			$idPregunta = $this->uri->segment(4);
-			$dato['respuestas']=$this->respuesta_model->read($idPregunta);
-
+			$dato['respuestas'] = $this->respuesta_model->read($idPregunta);
 			$dato['p'] = $this->pregunta_model->get($idPregunta);
 
 			$this->load->view('layouts/header');
-			$this->load->view('respuestas/index',$dato);
+			$this->load->view('respuestas/index', $dato);
 
 		}
 
 		function crearView(){
-			echo "Vista crear Respuesta";
+			$this->load->helper('form');
+			$this->load->view('layouts/header');
+			$this->load->view('respuestas/create');
 		}
 		// Llama al modelo para guardar una Respuesta nueva
 		function crear(){
-			echo "Crear Preguna";
-			// $dato = array(
-			// 	'Respuesta' => $this->input->post('Respuesta'),
-			// 	'tipoRespuesta' => $this->input->post('tipoRespuesta')
-			// );
-			// $this->Respuesta_model->create($dato);
-			
-			// // Regresa a la vista
-			// redirect(base_url() . "Admin/Respuestas");
+			$idPregunta = $this->uri->segment(5);
+			$respuesta = $this->input->post('respuesta');
+
+			$datos['respuesta_pregunta'] = $this->respuesta_model->create($idPregunta, $respuesta);
+			//$this->respuesta_model->create();
+
+			// Regresa a la vista
+			redirect("Cuestionarios/Preguntas/Respuestas/" . $idPregunta);
 		}
 
 		

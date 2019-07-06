@@ -1,6 +1,6 @@
 <?php
  
-	class CuestionariosController extends CI_Controller{
+	class CuestionariosController extends CI_Controller{  
 		
 		function __construct(){  
 			parent::__construct();
@@ -17,11 +17,19 @@
 		
 		// Vista para crear un cuestionario
 		function crearView(){  
-			echo "Vista Crear Cuestionario: ";
+			$this->load->view('layouts/header');
+			$this->load->view('cuestionarios/create');	
 		}
 
 		function crear(){  
-			echo "Crear Cuestionario: ";
+			$data = array(
+			'nombre' => $this->input->post('nombre')
+			);
+			$this->cuestionario_model->create($data);
+
+			redirect(base_url()."Cuestionarios");
+
+			
 		}
 
 		// Vista para editar un cuestionario

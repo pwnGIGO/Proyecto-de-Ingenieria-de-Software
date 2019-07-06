@@ -1,8 +1,13 @@
       <?php
          // Preguntas
-         $crearPregunta_url = base_url() . "Cuestionarios/Preguntas/Crear";
+         //extraer el id.
+         //mandarlo
+         $idCuestionario = $this->uri->segment(3);
+         $crearPregunta_url = base_url() . "Cuestionarios/Preguntas/Crear/".$idCuestionario;
          $editarPregunta_url = base_url() . "Cuestionarios/Preguntas/Editar/";
          $eliminarPregunta_url = base_url() . "Cuestionarios/Preguntas/delete/";
+         
+        
 
          // Respuestas
          $url_respuestas = base_url() . "Cuestionarios/Preguntas/Respuestas/";

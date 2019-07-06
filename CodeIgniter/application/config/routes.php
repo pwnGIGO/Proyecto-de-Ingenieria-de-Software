@@ -22,7 +22,7 @@ $route['default_controller'] = 'indexController';
 /*******************USUARIO LOGEADO***********************/
 
 // Responder Encuestas
-$route['Inicio'] = 'indexController/indexAdmin';
+$route['Inicio'] = 'indexController/indexAdmin';  
 
 
 /* Seccion de Encuestas*/
@@ -45,16 +45,16 @@ $route['Cuestionarios/delete/:num'] = "cuestionariosController/eliminar";
 
 // Preguntas
 $route['Cuestionarios/Preguntas/:num'] = "preguntasController";
-$route['Cuestionarios/Preguntas/Crear'] = "preguntasController/crearView";
-$route['Cuestionarios/Preguntas/create'] = "preguntasController/crear";
+$route['Cuestionarios/Preguntas/Crear/:num'] = "preguntasController/crearView";
+$route['Cuestionarios/Preguntas/create/:num'] = "preguntasController/crear";
 $route['Cuestionarios/Preguntas/Editar/:num'] = "preguntasController/actualizarView";
 $route['Cuestionarios/Preguntas/update/:num'] = "preguntasController/actualizar";
 $route['Cuestionarios/Preguntas/delete/:num'] = "preguntasController/eliminar";
 
 //Respuestas
 $route['Cuestionarios/Preguntas/Respuestas/:num'] = "respuestasController";
-$route['Cuestionarios/Preguntas/Respuestas/Crear'] = "respuestasController/crearView";
-$route['Cuestionarios/Preguntas/Respuestas/create'] = "respuestasController/crear";
+$route['Cuestionarios/Preguntas/Respuestas/Crear/:num'] = "respuestasController/crearView";
+$route['Cuestionarios/Preguntas/Respuestas/create/:num'] = "respuestasController/crear";
 $route['Cuestionarios/Preguntas/Respuestas/Editar/:num'] = "respuestasController/actualizarView";
 $route['Cuestionarios/Preguntas/Respuestas/update/:num'] = "respuestasController/actualizar";
 $route['Cuestionarios/Preguntas/Respuestas/delete/:num'] = "respuestasController/eliminar";
