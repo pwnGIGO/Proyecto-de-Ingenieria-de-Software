@@ -1,4 +1,4 @@
-<?php 
+<?php   
 	defined('BASEPATH') OR exit('No direct script access allowed');
 
 	class PreguntasController extends CI_Controller{
@@ -8,6 +8,7 @@
 			$this->load->model('cuestionario_model');
 			$this->load->model('pregunta_model');
 			$this->load->model('pregunta_cuestionario_model');
+			$this->load->model('respuesta_model');
 		}
 		// Vista principal de preguntas
 		function index(){
@@ -59,11 +60,19 @@
 		}
 
 		function eliminar(){
-		$idPregunta = $this->uri->segment(3);   
-		$this->pregunta_model->delete($idPregunta);
-		echo "Se elimino la Pregunta gp: " . $idPregunta;
-		//redirect("Cuestionarios/Preguntas");
+		//aqui..hoy eelimi	
+		$idPregunta = $this->uri->segment(4);   
 		
+		//eliminar sus respuestas
+		$this->respuesta_model->delete_conjunto($idPregunta);
+		//elimina la relacion de cuestionario-pregunta
+		$this->pregunta_cuestionario_model->delete($idPregunta);
+		
+		//
+		//elimina la pregunta
+		$this->pregunta_model->delete($idPregunta);
+		//regresa a la pagina anterior
+		redirect($_SERVER['HTTP_REFERER']);
 		}
 
 		function obtener(){

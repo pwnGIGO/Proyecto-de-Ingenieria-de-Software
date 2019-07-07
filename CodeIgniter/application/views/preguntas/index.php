@@ -1,6 +1,6 @@
       <?php
          // Preguntas
-         //extraer el id.
+         //extraer el id.   
          //mandarlo
          $idCuestionario = $this->uri->segment(3);
          $crearPregunta_url = base_url() . "Cuestionarios/Preguntas/Crear/".$idCuestionario;
@@ -34,7 +34,7 @@
             <thead class="thead-light">
                <tr>
                   <th scope="col">id</th>
-                  <th scope="col">Respuesta</th>
+                  <th scope="col">Pregunta</th>
                   <th scope="col">Acción</th>
                </tr>
             </thead>
@@ -51,10 +51,11 @@
                            <a href="<?php echo $editarPregunta_url . $pregunta->idPregunta?>">
                               <input class="btn btn-info" type="button" name="Editar" value="Editar">
                            </a>
-                           <form href="<?php echo $eliminarPregunta_url ?>" method="post">
-                              <input type="hidden" name="idPregunta" value=" <?php echo $pregunta->idPregunta?>">
-                              <input class="btn btn-danger" type="submit" name="Eliminar" value="Eliminar">
-                           </form>
+                           <a href="<?php echo $eliminarPregunta_url . $pregunta->idPregunta?>">
+                              <input class="btn btn-danger" type="button" name="Eliminar" value="Eliminar">
+                           </a>
+                           
+                           
                         </td>
                      </tr>
                   <?php } ?>
@@ -63,3 +64,20 @@
          </table>
       </div>
       <br>
+</body>
+</html>
+
+
+<?php 
+/*
+
+<form href="<?php echo $eliminarPregunta_url . $pregunta->idPregunta ?>" method="post">
+                              <input type="hidden" name="idPregunta" value=" <?php echo $pregunta->idPregunta?>">
+                              <input class="btn btn-danger" type="submit" name="Eliminar" value="Eliminar">
+                           </form>
+
+
+*/
+
+
+ ?>

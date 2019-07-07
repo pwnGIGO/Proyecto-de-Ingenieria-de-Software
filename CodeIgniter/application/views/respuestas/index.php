@@ -7,6 +7,8 @@
 			$eliminarRespuesta_url = base_url() . "Cuestionarios/Preguntas/Respuestas/delete/";
 
 		?>
+		
+
 		<div align="center">
 			<h2>Pregunta:</h2>
 			<h3>
@@ -55,3 +57,7 @@
 			</table>
 		</div>
 		<br>
+
+</body>
+
+</html>

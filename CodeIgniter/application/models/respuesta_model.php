@@ -46,7 +46,7 @@
 			$query = $this->db->update('respuesta', $respuesta);
 		}
 
-		// Se elimina la pregunta en Base de Datos
+		// Se elimina la respuesta en Base de Datos
 		function delete($id){
 			$this->db->where('idRespuesta', $id);
 			$this->db->delete('respuesta'); 
@@ -57,6 +57,18 @@
 				return false;
 			}
 		}
+
+		function delete_conjunto($idPregunta){
+			$this->db->where('pregunta_idPregunta', $idPregunta);
+			$this->db->delete('respuesta'); 
+			if ($this->db->affected_rows() > 0) {
+				return true;
+			}
+			else{
+				return false;
+			}	
+		}
+
 }
 
 		

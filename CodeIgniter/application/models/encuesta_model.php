@@ -29,7 +29,15 @@
 
 		}
 
-		function delete(){
+		function delete($idEncuesta){
+			$this->db->where('idEncuesta', $idEncuesta);
+			$this->db->delete('encuesta'); 
+			if ($this->db->affected_rows() > 0) {
+				return true;
+			}
+			else{
+				return false;
+			}
 			
 		}
 	}	

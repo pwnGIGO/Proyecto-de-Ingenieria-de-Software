@@ -41,7 +41,17 @@
 			
 		}
 
-		function delete(){
+
+		//eliminamos la relacion que existe al borrar una pregunta, con el cuestionario
+		function delete($idPregunta){
+			$this->db->where('pregunta_idPregunta', $idPregunta);
+			$this->db->delete('pregunta_cuestionario'); 
+			if ($this->db->affected_rows() > 0) {
+				return true;
+			}
+			else{
+				return false;
+			}
 			
 		}
 

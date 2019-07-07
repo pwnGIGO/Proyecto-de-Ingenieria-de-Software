@@ -1,4 +1,4 @@
-<?php
+<?php   
 
 	class EncuestasController extends CI_Controller{
 		function __construct(){
@@ -48,8 +48,10 @@
 		}
 
 		function eliminar(){
-			$idEncuesta = $this->uri->segment(2);   
-			echo "Eliminar Encuesta: " . $idEncuesta;
+			$idEncuesta = $this->uri->segment(3);
+			$this->encuesta_model->delete($idEncuesta);
+			# redirecciona a la pagina anterior del navegador
+			redirect($_SERVER['HTTP_REFERER']);
 		}
 
 		function obtener(){
