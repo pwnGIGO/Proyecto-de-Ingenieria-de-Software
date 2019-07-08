@@ -35,7 +35,7 @@
             $pregunta = $this->input->post('pregunta');
             //para llenar la tabla de preguntas
 			$dato = array('pregunta' => $this->input->post('pregunta'));
-			 $this->pregunta_model->create($dato);
+			$this->pregunta_model->create($dato);
 		   //para rellenar la tabla intermedia 
 			$this->pregunta_cuestionario_model->create($idCuestionario,$pregunta);
 		    // Regresa a la vista
@@ -45,18 +45,18 @@
 		
 		function actualizarView(){
 			$idPregunta = $this->uri->segment(4);
-			echo "Vista actualizar pregunta :" . $idPregunta;
+			//echo "Vista actualizar pregunta :" . $idPregunta;
+			$data['pregunta'] = $this->pregunta_model->get($idPregunta);
+			$this->load->helper('form');
+            $this->load->view('layouts/header');
+		    $this->load->view('preguntas/update', $data);
+
 		}
 		function actualizar(){
-			$idPregunta = $this->uri->segment(4);
-			echo "Actualizar pregunta :" . $idPregunta;
-			// $pregunta = array(
-			// 	'pregunta' => $this->input->post('pregunta'),
-			// 	'tipoPregunta' => $this->input->post('tipoPregunta'),
-			// );
-			// // Se obtiene del url el id de la pregunta
-			// $idProducto = $this->uri->segment(3);
-			// $this->pregunta_model->update($idPregunta, $pregunta);
+
+			$pregunta = $this->input->post('pregunta');
+			$idPregunta = $this->input->post('idPregunta');
+			$this->pregunta_model->update($idPregunta, $pregunta);
 		}
 
 		function eliminar(){

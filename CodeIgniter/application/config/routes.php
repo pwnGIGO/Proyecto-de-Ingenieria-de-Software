@@ -48,7 +48,7 @@ $route['Cuestionarios/Preguntas/:num'] = "preguntasController";
 $route['Cuestionarios/Preguntas/Crear/:num'] = "preguntasController/crearView";
 $route['Cuestionarios/Preguntas/create/:num'] = "preguntasController/crear";
 $route['Cuestionarios/Preguntas/Editar/:num'] = "preguntasController/actualizarView";
-$route['Cuestionarios/Preguntas/update/:num'] = "preguntasController/actualizar";
+$route['Cuestionarios/Preguntas/update'] = "preguntasController/actualizar";
 $route['Cuestionarios/Preguntas/delete/:num'] = "preguntasController/eliminar";
 
 //Respuestas

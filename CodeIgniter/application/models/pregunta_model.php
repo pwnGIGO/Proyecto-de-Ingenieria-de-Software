@@ -39,6 +39,10 @@
 
 		// Se actualiza una pregunta en Base de Datos
 		function update($idPregunta, $pregunta){
+			echo "este echo esta en pregunta_model.php";
+			echo "Actualizar: ";
+			echo "<br>id: " . $idPregunta;
+			echo "<br>Pregunta: " . $pregunta;
 			$this->db->where('idPregunta', $idPregunta);
 			$query = $this->db->update('pregunta', $pregunta);
 		}
