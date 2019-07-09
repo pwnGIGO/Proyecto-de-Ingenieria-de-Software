@@ -45,7 +45,7 @@
 		
 		function actualizarView(){
 			$idPregunta = $this->uri->segment(4);
-			//echo "Vista actualizar pregunta :" . $idPregunta;
+			$data['idCuestionario'] = $this->input->post('idCuestionario');
 			$data['pregunta'] = $this->pregunta_model->get($idPregunta);
 			$this->load->helper('form');
             $this->load->view('layouts/header');
@@ -56,7 +56,9 @@
 
 			$pregunta = $this->input->post('pregunta');
 			$idPregunta = $this->input->post('idPregunta');
+			$idCuestionario = $this->input->post('idCuestionario');
 			$this->pregunta_model->update($idPregunta, $pregunta);
+			redirect(base_url() . "Cuestionarios/Preguntas/$idCuestionario");
 		}
 
 		function eliminar(){

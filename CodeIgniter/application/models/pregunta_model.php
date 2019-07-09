@@ -43,8 +43,11 @@
 			echo "Actualizar: ";
 			echo "<br>id: " . $idPregunta;
 			echo "<br>Pregunta: " . $pregunta;
+			$dato = array(
+				'pregunta' => $pregunta
+				);
 			$this->db->where('idPregunta', $idPregunta);
-			$query = $this->db->update('pregunta', $pregunta);
+			$query = $this->db->update('pregunta', $dato);
 		}
 
 		// Se elimina la pregunta en Base de Datos
