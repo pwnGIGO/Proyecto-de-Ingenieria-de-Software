@@ -9,7 +9,7 @@ $ruta_eliminarEncuesta = base_url()."Encuestas/delete/";
  ?>
 
 <div align="center">
-<a href="<?php echo $ruta_crearEncuesta ?>"><input class="btn btn-success" type="button" name="submit" value="+ crear Encuesta"></a>
+<a href="<?php echo $ruta_crearEncuesta ?>"><input class="btn btn-success" type="button" name="submit" value="Crear Encuesta"></a>
 <br><br>
 
 
