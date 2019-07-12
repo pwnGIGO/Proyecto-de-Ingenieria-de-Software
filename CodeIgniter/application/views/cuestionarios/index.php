@@ -7,7 +7,7 @@
 	$url_eliminar = base_url() . "Cuestionarios/delete/";
 
 	// Preguntas
-	$url_preguntas = base_url() . "Cuestionarios/Preguntas/";
+	$url_preguntas = base_url() . "Cuestionarios/Preguntas";
  ?>
 
 
@@ -33,9 +33,15 @@
 
 					<h4><?= $cuestionario->nombreCuestionario ?></h4>
 
-					<a href="<?= $url_preguntas.$cuestionario->idCuestionario ?>">
-						<img src="<?php echo $ruta_ima_cuestionario ?>">
-					</a>
+						<!-- <img src="<?php echo $ruta_ima_cuestionario ?>"> -->
+						<form action="<?= $url_preguntas ?>" method = "POST">
+							<input type="hidden" name="idCuestionario" value="<?php echo $cuestionario->idCuestionario?>">
+							<button type="submit">
+								<img src="<?php echo $ruta_ima_cuestionario ?>">
+							</button>
+						</form>
+					
+
 					<br><br>
 					<p>
 						<a href="<?= $url_editar.$cuestionario->idCuestionario ?>">

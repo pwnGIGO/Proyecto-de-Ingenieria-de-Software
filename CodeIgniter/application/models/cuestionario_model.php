@@ -32,6 +32,34 @@
 			}
 		}
 
+		function agregar($idCuestionario){
+			
+			$query ='SELECT * FROM pregunta LEFT JOIN pregunta_cuestionario ON idPregunta = pregunta_idPregunta WHERE NOT cuestionario_idCuestionario =' . $idCuestionario .' OR cuestionario_idCuestionario IS NULL';
+
+
+    		$query = $this->db->query($query);
+
+			
+			if ($query->num_rows() > 0) return $query;
+			else return false;
+
+			
+		}
+
+		function quitar($idCuestionario){
+			
+			$query ='SELECT * FROM pregunta INNER JOIN pregunta_cuestionario ON idPregunta = pregunta_idPregunta WHERE cuestionario_idCuestionario =' . $idCuestionario;
+
+
+    		$query = $this->db->query($query);
+
+			
+			if ($query->num_rows() > 0) return $query;
+			else return false;
+
+			
+		}
+		
 		function update(){
 
 		}

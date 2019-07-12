@@ -51,14 +51,19 @@
 	}
 	
 
-		function obtener(){
-			$idCuestionario = $this->uri->segment(3);
-			echo "Obtener Cuestionario: " . $idCuestionario;
-			// $data['pregunta_cuestionario'] = $this->pregunta_cuestionario_model->read($idCuestionario);
-			// //obtiene todas las preguntas relacionnadas a este cuestionario
-			// //
-			// $data['cuestionario']= $this->cuestionario_model->get($idCuestionario);
-			// $this->load->view('layouts/header');
-			// $this->load->view('cuestionarios/read',$data);	
+		function obtenerPreguntas(){
+			#$idCuestionario = $this->uri->segment(3);
+
+
+			$idCuestionario = $this->input->post('idCuestionario');
+			$data['Cuestionario'] = $this->cuestionario_model->get($idCuestionario);
+
+			//primer consulta
+			$data['agregar'] = $this->cuestionario_model->agregar($idCuestionario);
+			//$data['agregar'] = NULL;
+			$data['quitar'] = $this->cuestionario_model->quitar($idCuestionario);
+
+			$this->load->view('layouts/header');
+			$this->load->view('cuestionarios/getPreguntas',$data);	
 		}
 	}
