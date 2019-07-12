@@ -9,7 +9,9 @@
 				'name' => 'nombre',
 				'placeholder' => '',
 				'required' => 'required',
-				'size' => '70'
+				'size' => '70',
+				'maxlength' => '50',
+				'autocomplete' => 'off'
 			);
 
 			
@@ -29,7 +31,7 @@
 						</div>
 
 						<div align="center">
-							<input class="btn btn-success" type="submit" name="" value="Crear +">
+							<input class="btn btn-success" type="submit" name="" value="Crear Cuestionario">
 						</div><br><br>
 					
 				</div>

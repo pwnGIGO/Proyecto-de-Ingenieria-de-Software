@@ -1,10 +1,10 @@
 		<!-- Read -->
 		<?php
 			// Respuestas
-			$idPregunta = $this->uri->segment(4);
-			$crearRespuesta_url = base_url() . "Cuestionarios/Preguntas/Respuestas/Crear/" . $idPregunta;
-			$editarRespuesta_url = base_url() . "Cuestionarios/Preguntas/Respuestas/Editar/";
-			$eliminarRespuesta_url = base_url() . "Cuestionarios/Preguntas/Respuestas/delete/";
+			$idPregunta = $this->uri->segment(3);
+			$crearRespuesta_url = base_url() . "Preguntas/Respuestas/Crear/" . $idPregunta;
+			$editarRespuesta_url = base_url() . "Preguntas/Respuestas/Editar/";
+			$eliminarRespuesta_url = base_url() . "Preguntas/Respuestas/delete/";
 
 		?>
 		
@@ -13,11 +13,11 @@
 			<h2>Pregunta:</h2>
 			<h3>
 				<?php
-		        foreach ($p->result() as $pe){
-		           echo $pe->pregunta; 
-		           $idPregunta = $pe->idPregunta;
-	            }
-	         ?>
+		        	foreach ($p->result() as $pe){
+		           		echo $pe->pregunta; 
+		           		$idPregunta = $pe->idPregunta;
+	            	}
+	         	?>
 			</h3>
 		</div>
 		<br>

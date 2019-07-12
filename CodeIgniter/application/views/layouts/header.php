@@ -16,6 +16,7 @@
 			$login_url = base_url();
 			$encuestas_url = base_url() . "Encuestas";
 			$cuestionario_url = base_url() . "Cuestionarios";
+			$preguntas_url = base_url() . "Preguntas";
 		?>
 		<nav class="navbar navbar-expand navbar-dark bg-dark">
 			<a class="navbar-brand" href="<?php echo $inicio_url ?>">Contestar</a>
@@ -25,6 +26,9 @@
 
 			<div class="collapse navbar-collapse" id="navbarsExample02">
 				<ul class="navbar-nav mr-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="<?php echo $preguntas_url ?>">Preguntas</a>
+					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="<?php echo $encuestas_url ?>">Encuestas</a>
 					</li>

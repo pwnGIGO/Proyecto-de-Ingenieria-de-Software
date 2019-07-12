@@ -9,7 +9,9 @@
 				'name' => 'nombre',
 				'placeholder' => 'Nombre',
 				'required' => 'required',
-				'size' => '60'
+				'size' => '60',
+				'maxlength' => '50',
+				'autocomplete' => 'off'
 			);
 
 			$fecha_i = array(

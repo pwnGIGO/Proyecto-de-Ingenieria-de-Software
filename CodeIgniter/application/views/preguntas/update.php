@@ -6,21 +6,21 @@
 		'placeholder' => 'Escribe tu pregunta aqui',
 		'required' => 'required',
 		'value' => $pregunta->result()[0]->pregunta,
-		'size' => '100'
+		'size' => '125',
+		'maxlength' => '100'
 	);
-	$regresar = base_url() . "Cuestionarios/Preguntas/$idCuestionario"; 
-	$actualizaPregunta_url = base_url()."Cuestionarios/Preguntas/update";
+	$regresar = base_url() . "Preguntas"; 
+	$idPregunta = $this->uri->segment(3);
+	$actualizaPregunta_url = base_url()."Preguntas/update".$idPregunta;
 ?>
 
 <div class="container">
 	<div align="center">
 		<h2>Actualizar Pregunta:</h2>
 		<h3><?= $resultado->pregunta?></h3>
-		<?php if($pregunta!=null):?>
+		<?php if($pregunta != null):?>
 			<?= form_open($actualizaPregunta_url) ?>
 				<input type="hidden" name="idPregunta" value="<?php echo $resultado->idPregunta ?>">
-				<input type="hidden" name="idCuestionario" value="<?php echo $idCuestionario ?>">
-
 				<?= form_label('Nombre','pregunta') ?>
 				<?= form_input($preguntaNueva) ?>
 				<br><br>

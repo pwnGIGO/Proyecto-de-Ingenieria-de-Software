@@ -10,7 +10,7 @@
 		}
 
 		function index(){
-			$idPregunta = $this->uri->segment(4);   
+			$idPregunta = $this->uri->segment(3);   
 			$dato['respuestas'] = $this->respuesta_model->read($idPregunta);
 			$dato['p'] = $this->pregunta_model->get($idPregunta);
 
@@ -26,14 +26,14 @@
 		}
 		// Llama al modelo para guardar una Respuesta nueva
 		function crear(){
-			$idPregunta = $this->uri->segment(5);
+			$idPregunta = $this->uri->segment(4);
 			$respuesta = $this->input->post('respuesta');
 
 			$datos['respuesta_pregunta'] = $this->respuesta_model->create($idPregunta, $respuesta);
 			//$this->respuesta_model->create();
 
 			// Regresa a la vista
-			redirect("Cuestionarios/Preguntas/Respuestas/" . $idPregunta);
+			redirect("Preguntas/Respuestas/" . $idPregunta);
 		}
 
 		
@@ -54,13 +54,13 @@
 		}
 
 		function eliminar(){
-		$idRespuesta = $this->uri->segment(5);   
-		$this->respuesta_model->delete($idRespuesta);
-		//echo "Se elimino la Respuesta: " . $idRespuesta;
-		#redirect("Cuestionarios/Preguntas");
-		#
-		# redirecciona a la pagina anterior del navegador
-		redirect($_SERVER['HTTP_REFERER']);
+			$idRespuesta = $this->uri->segment(4);   
+			$this->respuesta_model->delete($idRespuesta);
+			//echo "Se elimino la Respuesta: " . $idRespuesta;
+			#redirect("Cuestionarios/Preguntas");
+			#
+			# redirecciona a la pagina anterior del navegador
+			redirect($_SERVER['HTTP_REFERER']);
 		}
 
 		function obtener(){

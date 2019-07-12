@@ -44,20 +44,21 @@ $route['Cuestionarios/update/:num'] = "cuestionariosController/actualizar";
 $route['Cuestionarios/delete/:num'] = "cuestionariosController/eliminar";
 
 // Preguntas
-$route['Cuestionarios/Preguntas/:num'] = "preguntasController";
-$route['Cuestionarios/Preguntas/Crear/:num'] = "preguntasController/crearView";
-$route['Cuestionarios/Preguntas/create/:num'] = "preguntasController/crear";
-$route['Cuestionarios/Preguntas/Editar/:num'] = "preguntasController/actualizarView";
-$route['Cuestionarios/Preguntas/update'] = "preguntasController/actualizar";
-$route['Cuestionarios/Preguntas/delete/:num'] = "preguntasController/eliminar";
+$route['Preguntas'] = "preguntasController";
+$route['Preguntas/:num'] = "preguntasController";
+$route['Preguntas/Crear'] = "preguntasController/crearView";
+$route['Preguntas/create'] = "preguntasController/crear";
+$route['Preguntas/Editar'] = "preguntasController/actualizarView";
+$route['Preguntas/update'] = "preguntasController/actualizar";
+$route['Preguntas/delete/:num'] = "preguntasController/eliminar";
 
 //Respuestas
-$route['Cuestionarios/Preguntas/Respuestas/:num'] = "respuestasController";
-$route['Cuestionarios/Preguntas/Respuestas/Crear/:num'] = "respuestasController/crearView";
-$route['Cuestionarios/Preguntas/Respuestas/create/:num'] = "respuestasController/crear";
-$route['Cuestionarios/Preguntas/Respuestas/Editar/:num'] = "respuestasController/actualizarView";
-$route['Cuestionarios/Preguntas/Respuestas/update/:num'] = "respuestasController/actualizar";
-$route['Cuestionarios/Preguntas/Respuestas/delete/:num'] = "respuestasController/eliminar";
+$route['Preguntas/Respuestas/:num'] = "respuestasController";
+$route['Preguntas/Respuestas/Crear/:num'] = "respuestasController/crearView";
+$route['Preguntas/Respuestas/create/:num'] = "respuestasController/crear";
+$route['Preguntas/Respuestas/Editar/:num'] = "respuestasController/actualizarView";
+$route['Preguntas/Respuestas/update/:num'] = "respuestasController/actualizar";
+$route['Preguntas/Respuestas/delete/:num'] = "respuestasController/eliminar";
 
 
 

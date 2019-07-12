@@ -7,8 +7,8 @@
 			);
 			
 			// url para preguntasController/crearPregunta Espera
-			$idPregunta = $this->uri->segment(5);
-			$crearRespuestas_url = base_url() . "Cuestionarios/Preguntas/Respuestas/create/".$idPregunta;
+			$idPregunta = $this->uri->segment(4);
+			$crearRespuestas_url = base_url() . "Preguntas/Respuestas/create/".$idPregunta;
 		?>
 
 		<div class="container">
@@ -28,7 +28,7 @@
                         <div class="">
                             <i class="fa fa-envelope prefix white-text"></i>
                             <label><h5>Escribe tu respuesta:</h5></label>
-                            <input type="search" id="respuesta" name="respuesta" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required autocomplete="off">
+                            <input maxlength="100" type="search" id="respuesta" name="respuesta" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required autocomplete="off">
                         </div><br><br>
                         <div class="text-center">
                             <a href="<?php echo $crearRespuestas_url?>">

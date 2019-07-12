@@ -1,32 +1,21 @@
 <?php
-   $idCuestionario = $this->uri->segment(3);
-   $crearPregunta_url = base_url() . "Cuestionarios/Preguntas/Crear/".$idCuestionario;
-   $editarPregunta_url = base_url() . "Cuestionarios/Preguntas/Editar/";
-   $eliminarPregunta_url = base_url() . "Cuestionarios/Preguntas/delete/";
+   //$idCuestionario = $this->uri->segment(3);
+   $crearPregunta_url = base_url() . "Preguntas/Crear/";
+   $editarPregunta_url = base_url() . "Preguntas/Editar/";
+   $eliminarPregunta_url = base_url() . "Preguntas/delete/";
    // Respuestas
-   $url_respuestas = base_url() . "Cuestionarios/Preguntas/Respuestas/";
+   $url_respuestas = base_url() . "Preguntas/Respuestas/";
 ?>
 
 <div align="center">
-   <h2>Cuestionario:</h2>
-   <h3>
-      <?php
-         foreach ($p->result() as $pe){
-            echo $pe->nombreCuestionario; 
-         }
-      ?>
-   </h3>
-</div>
-
-<br>
+   <h2>Preguntas:</h2>
+</div><br>
 
 <div align="center">
    <a href="<?php echo $crearPregunta_url?>">
       <input class="btn btn-success" type="button" name="" value="Crear Pregunta">
    </a>
-</div>
-
-<br><br>
+</div><br><br>
 
 <div class="container">
    <table class="table table-hover">
@@ -38,7 +27,7 @@
          </tr>
       </thead>
       <tbody>
-         <?php if($preguntas!=null):?>
+         <?php if($preguntas != null):?>
             <?php foreach ($preguntas->result() as $pregunta) {?>
                <tr>
                   <td><?= $pregunta->idPregunta?></td>
@@ -50,8 +39,8 @@
                            <input class="btn btn-warning" type="button" name="respuestas" value="Respuestas">
                         </a>
                         <!-- Editar Pregunta -->
-                        <?= form_open($editarPregunta_url . $pregunta->idPregunta)?>
-                           <input type="hidden" name="idCuestionario" value="<?php echo $idCuestionario?>">
+                        <?= form_open($editarPregunta_url)?>
+                           <input type="hidden" name="idPregunta" value="<?php echo $pregunta->idPregunta?>">
                            <input class="btn btn-info" type="submit" name="Editar" value="Editar">
                         <?= form_close()?>
                         <!-- Eliminar Pregunta -->
