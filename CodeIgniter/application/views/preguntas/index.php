@@ -1,7 +1,7 @@
 <?php
    //$idCuestionario = $this->uri->segment(3);
    $crearPregunta_url = base_url() . "Preguntas/Crear/";
-   $editarPregunta_url = base_url() . "Preguntas/Editar/";
+   $editarPregunta_url = base_url() . "Preguntas/Editar";
    $eliminarPregunta_url = base_url() . "Preguntas/delete/";
    // Respuestas
    $url_respuestas = base_url() . "Preguntas/Respuestas/";

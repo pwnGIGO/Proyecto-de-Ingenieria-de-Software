@@ -27,13 +27,19 @@
 			<div class="collapse navbar-collapse" id="navbarsExample02">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item">
-						<a class="nav-link" href="<?php echo $preguntas_url ?>">Preguntas</a>
-					</li>
-					<li class="nav-item">
 						<a class="nav-link" href="<?php echo $encuestas_url ?>">Encuestas</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="<?php echo $cuestionario_url ?>">Cuestionarios</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="<?php echo $preguntas_url ?>">Preguntas</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Usuario</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Roles</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="<?php echo $login_url?>">Logout</a>
