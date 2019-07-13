@@ -1,17 +1,3 @@
-
-<?php 
-	$resultado = $respuesta->result()[0];
-	$respuestaNueva = array(
-		'name' => 'respuesta',
-		'placeholder' => '',
-		'required' => 'required',
-		'value' => $respuesta->result()[0]->respuesta,
-		'size' => '100'
-	);
-	$regresar = base_url() . "Preguntas/Respuestas/$idPregunta"; 
-	//$idRespuesta = $this->uri->segment(4);
-	$actualizaRespuesta_url = base_url()."Preguntas/Respuestas/update";
-?>
 <br><br>
 
 	<?= form_open('vistasController/update/'.$producto->result()[0]->idProducto) ?>
