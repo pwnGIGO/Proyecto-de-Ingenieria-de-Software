@@ -1,3 +1,4 @@
+
 <?php 
 	$resultado = $respuesta->result()[0];
 	$respuestaNueva = array(
@@ -11,24 +12,44 @@
 	//$idRespuesta = $this->uri->segment(4);
 	$actualizaRespuesta_url = base_url()."Preguntas/Respuestas/update";
 ?>
+<br><br>
 
-<div class="container">
-	<div align="center">
-		<h2>Actualizar Respuesta:</h2>
-		<h3><?= $resultado->respuesta?></h3>
-		<?php if($respuesta!=null):?>
-			<?= form_open($actualizaRespuesta_url) ?>
-				<input type="hidden" name="idRespuesta" value="<?php echo $resultado->idRespuesta ?>">
-				<input type="hidden" name="idPregunta" value="<?php echo $idPregunta ?>">
+	<?= form_open('vistasController/update/'.$producto->result()[0]->idProducto) ?>
+		
+		<?php
+			$nombre = array(
+				'name' => 'nombre',
+				'placeholder' => 'Nombre del Producto',
+				'required' => 'required',
+				'value' => $producto->result()[0]->nombre
+			);
 
-				<?= form_label('Nombre','respuesta') ?>
-				<?= form_input($respuestaNueva) ?>
-				<br><br>
-				<input type="submit" name="Actualizar" value="Actualizar" class="btn btn-info">
-			<?= form_close()?>
-		<?php endif?>
-	</div>
-	<a href="<?php echo $regresar?>" >
-		<input type="button" name="regresar" value="Regresar" class="btn btn-warning">
-	</a>
-</div>
+			$precio = array(
+				'name' => 'precio',
+				'placeholder' => 'Precio del Producto',
+				'required' => 'required',
+				'value' => $producto->result()[0]->precio
+			);
+			
+			$cantidad = array(
+				'name' => 'cantidad',
+				'placeholder' => 'Cantidad de Productos',
+				'required' => 'required',
+				'value' => $producto->result()[0]->cantidad
+			);
+		?>
+
+		<?= form_label('Nombre','nombre') ?>
+		<?= form_input($nombre) ?>
+		
+		<br><br>
+		<?= form_label('Precio','precio') ?>
+		<?= form_input($precio) ?>
+		
+		<br><br>
+		<?= form_label('Cantidad','cantidad') ?>
+		<?= form_input($cantidad) ?>
+		
+		<br><br>
+		<?= form_submit('', 'Actualizar') ?>
+	<?= form_close()?>

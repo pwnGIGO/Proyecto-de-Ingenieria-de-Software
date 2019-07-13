@@ -38,6 +38,7 @@
 
 		
 		function actualizarView(){
+
 			
 			$data['idPregunta'] = $this->input->post('idPregunta');
 			$data['idRespuesta'] = $this->input->post('idRespuesta');
@@ -47,13 +48,14 @@
             $this->load->view('layouts/header');
 		    $this->load->view('respuestas/update',$data);
 		}
+    
 		function actualizar(){
-
 			$data['idRespuesta']  = $this->input->post('idRespuesta');
 			$idPregunta = $this->input->post('idPregunta');
 			$Respuesta = $this->input->post('respuesta');
 			$this->respuesta_model->update($data['idRespuesta'], $Respuesta );
 			redirect(base_url() . "Preguntas/Respuestas/".$idPregunta);
+
 		}
 
 		function eliminar(){
