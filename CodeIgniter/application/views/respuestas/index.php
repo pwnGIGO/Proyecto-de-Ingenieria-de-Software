@@ -1,4 +1,4 @@
-		<!-- Read -->
+	<!-- Read -->
 		<?php
 			// Respuestas
 			$idPregunta = $this->uri->segment(3);
@@ -16,8 +16,7 @@
 		        	foreach ($p->result() as $pe){
 		           		echo $pe->pregunta; 
 		           		$idPregunta = $pe->idPregunta;
-	            	}
-	         	?>
+	        ?>
 			</h3>
 		</div>
 		<br>
@@ -46,13 +45,14 @@
 									<div class="form-inline">
 										
 										<form action="<?php echo $editarRespuesta_url?>" method="POST">
-											<input type="hidden" name="idPregunta" value="<?php echo $respuesta->idRespuesta?>">
+											<input type="hidden" name="idPregunta" value="<?php echo $pe->idPregunta?>">
+											<input type="hidden" name="idRespuesta" value="<?php echo $respuesta->idRespuesta?>">
 											<input class="btn btn-info" type="submit" name="Editar" value="Editar">
 										</form>
 										<a href="<?php echo $eliminarRespuesta_url . $respuesta->idRespuesta?>">
 											<input class="btn btn-danger" type="button" name="Eliminar" value="Eliminar">
-									</a>
-								 </div>
+										</a>
+									</div>
 								</td>
 							</tr>
 						<?php } ?>
@@ -61,7 +61,7 @@
 			</table>
 		</div>
 		<br>
-
+<?php } ?>
 </body>
 
 </html>

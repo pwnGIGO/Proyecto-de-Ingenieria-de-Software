@@ -8,7 +8,7 @@
 		'size' => '100'
 	);
 	$regresar = base_url() . "Preguntas/Respuestas/$idPregunta"; 
-	$idRespuesta = $this->uri->segment(4);
+	//$idRespuesta = $this->uri->segment(4);
 	$actualizaRespuesta_url = base_url()."Preguntas/Respuestas/update";
 ?>
 
