@@ -42,14 +42,10 @@
 
 		// Se actualiza una respuesta en Base de Datos
 		function update($idRespuesta, $respuesta){
-			$dato = array(
-				'respuesta' => $respuesta
-				);
 			$this->db->where('idRespuesta', $idRespuesta);
-			$query = $this->db->update('respuesta', $dato);
-				
-
+			$query = $this->db->update('respuesta', $respuesta);
 		}
+
 		// Se elimina la respuesta en Base de Datos
 		function delete($id){
 			$this->db->where('idRespuesta', $id);
