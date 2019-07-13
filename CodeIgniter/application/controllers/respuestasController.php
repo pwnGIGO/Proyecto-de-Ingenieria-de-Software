@@ -38,19 +38,24 @@
 
 		
 		function actualizarView(){
-			$idRespuesta = $this->uri->segment(4);
-			echo "Vista actualizar Respuesta :" . $idRespuesta;
+
+			
+			$data['idPregunta'] = $this->input->post('idPregunta');
+			$data['idRespuesta'] = $this->input->post('idRespuesta');
+			$data['respuesta'] = $this->respuesta_model->get($data['idRespuesta']);
+			
+			$this->load->helper('form');
+            $this->load->view('layouts/header');
+		    $this->load->view('respuestas/update',$data);
 		}
+    
 		function actualizar(){
-			$idRespuesta = $this->uri->segment(4);
-			echo "Actualizar Respuesta :" . $idRespuesta;
-			// $Respuesta = array(
-			// 	'Respuesta' => $this->input->post('Respuesta'),
-			// 	'tipoRespuesta' => $this->input->post('tipoRespuesta'),
-			// );
-			// // Se obtiene del url el id de la Respuesta
-			// $idProducto = $this->uri->segment(3);
-			// $this->Respuesta_model->update($idRespuesta, $Respuesta);
+			$data['idRespuesta']  = $this->input->post('idRespuesta');
+			$idPregunta = $this->input->post('idPregunta');
+			$Respuesta = $this->input->post('respuesta');
+			$this->respuesta_model->update($data['idRespuesta'], $Respuesta );
+			redirect(base_url() . "Preguntas/Respuestas/".$idPregunta);
+
 		}
 
 		function eliminar(){
