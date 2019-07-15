@@ -5,7 +5,7 @@
 			'placeholder' => '',
 			'required' => 'required'
 		);
-		
+		$regresar = base_url() . "Preguntas";
 		$crearPreguntas_url = base_url() . "Preguntas/create";
 ?>
 	<div class="container">
@@ -31,7 +31,11 @@
                         <a href="<?php echo $crearPreguntas_url?>">
 							<input class="btn btn-success" type="submit" name="" value="Crear Pregunta">
 						</a>
+						<a href="<?php echo $regresar?>" >
+		              <input type="button" name="regresar" value="Cancelar" class="btn btn-warning">
+	              </a>
                     </div>
+                    
                  </div>
             </div>
         <?= form_close()?>

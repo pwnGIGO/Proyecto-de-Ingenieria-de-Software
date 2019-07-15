@@ -29,6 +29,6 @@
 		<?php endif?>
 	</div>
 	<a href="<?php echo $regresar?>" >
-		<input type="button" name="regresar" value="Regresar" class="btn btn-warning">
+		<input type="button" name="regresar" value="Cancelar" class="btn btn-warning">
 	</a>
 </div>

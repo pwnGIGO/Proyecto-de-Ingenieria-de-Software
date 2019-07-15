@@ -5,7 +5,7 @@
 			$crearRespuesta_url = base_url() . "Preguntas/Respuestas/Crear/" . $idPregunta;
 			$editarRespuesta_url = base_url() . "Preguntas/Respuestas/Editar";
 			$eliminarRespuesta_url = base_url() . "Preguntas/Respuestas/delete/";
-
+            $regresar = base_url() . "Preguntas";
 		?>
 		
 <div align="center">
@@ -19,6 +19,11 @@
 			</h3>
 		</div>
 		<br>
+		<div align="start">
+		 <a href="<?php echo $regresar?>" >
+		<input type="button" name="regresar" value="Regresar" class="btn btn-info">
+	    </a>
+	</div>
 		<div align="center">
 			<a href="<?php echo $crearRespuesta_url?>">
             <input class="btn btn-success" type="button" name="" value="Crear Respuesta">
