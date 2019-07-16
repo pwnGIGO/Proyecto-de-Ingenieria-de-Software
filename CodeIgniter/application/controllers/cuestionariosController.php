@@ -23,12 +23,13 @@
 
 		function crear(){  
 			$data = array(
-			'nombre' => $this->input->post('nombre')
+			'nombre' => $this->input->post('nombre'),
+			'descripcion' => $this->input->post('descripcion')
+			
 			);
 			$this->cuestionario_model->create($data);
 
 			redirect(base_url()."Cuestionarios");
-
 			
 		}
 
@@ -53,9 +54,8 @@
 
 		function obtenerPreguntas(){
 			#$idCuestionario = $this->uri->segment(3);
-
-
-			$idCuestionario = $this->input->post('idCuestionario');
+			$idCuestionario = $this->input->post('idCuestionario');	
+			
 			$data['Cuestionario'] = $this->cuestionario_model->get($idCuestionario);
 
 			//primer consulta
@@ -65,5 +65,41 @@
 
 			$this->load->view('layouts/header');
 			$this->load->view('cuestionarios/getPreguntas',$data);	
+		}
+
+		function agregarPregunta(){
+			$idPregunta = $this->input->post('idPregunta');
+			$idCuestionario = $this->input->post('idCuestionario');
+			$this->pregunta_cuestionario_model->add($idCuestionario,$idPregunta);
+
+
+			# repite el metodo obtener pregunta
+			$data['Cuestionario'] = $this->cuestionario_model->get($idCuestionario);
+			//primer consulta
+			$data['agregar'] = $this->cuestionario_model->agregar($idCuestionario);
+			//segunda
+			$data['quitar'] = $this->cuestionario_model->quitar($idCuestionario);
+
+			$this->load->view('layouts/header');
+			$this->load->view('cuestionarios/getPreguntas',$data);
+		}
+
+		function RemoverPregunta(){
+			$idPregunta = $this->input->post('idPregunta');
+			$idCuestionario = $this->input->post('idCuestionario');
+			$this->pregunta_cuestionario_model->Remove($idCuestionario,$idPregunta);
+
+			//echo "Entre a Remove". $idCuestionario."   ".$idPregunta ;
+			
+			# repite el metodo obtener pregunta
+			$data['Cuestionario'] = $this->cuestionario_model->get($idCuestionario);
+			//primer consulta
+			$data['agregar'] = $this->cuestionario_model->agregar($idCuestionario);
+			//segunda
+			$data['quitar'] = $this->cuestionario_model->quitar($idCuestionario);
+
+			$this->load->view('layouts/header');
+			$this->load->view('cuestionarios/getPreguntas',$data);
+			
 		}
 	}

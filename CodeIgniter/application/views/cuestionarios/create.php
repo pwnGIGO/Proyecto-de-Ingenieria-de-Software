@@ -12,6 +12,17 @@
 				'maxlength' => '50',
 				'autocomplete' => 'off'
 			);
+
+			$descripcion= array(
+				'name' => 'descripcion',
+				'placeholder' => ' Agrega una descripcion del cuestionario',
+				'required' => 'required',
+				'size' => '',
+				'autocomplete' => 'off'
+			);
+
+			
+
 		?>
 
 		<div class="container" >
@@ -21,6 +32,11 @@
 						<i class="fa fa-envelope prefix white-text"></i>
 						<?= form_label('Nombre del Cuestionario: ') ?>
 						<?= form_input($nombreCuestionario) ?><br><br>
+
+						<?= form_label('Descripcion: ') ?><br>
+						
+						<textarea required name="descripcion" placeholder="Agrega una descripcion del Cuestionario"  maxlength="500" rows="8" style="width: 80%; " ></textarea>  
+					
 					</div>
 					<div align="center">
 						<input class="btn btn-success" type="submit" name="" value="Crear Cuestionario">

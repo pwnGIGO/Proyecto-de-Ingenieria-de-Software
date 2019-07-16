@@ -55,6 +55,32 @@
 			
 		}
 
+		//es el boton donde en el listado de preguntas agregas una pregunta
+		//a un cuestionario. Solo llenar la tabla pregunta cuestionario para 
+		//hacer la relacion 
+		function add($idCuestionario,$idPregunta){
+			$insert = array(
+							'cuestionario_idCuestionario'=>$idCuestionario,
+                        	'pregunta_idPregunta'=> $idPregunta,
+                        	'orden'=>'0');
+
+			$this->db->insert('pregunta_cuestionario', $insert);
+		}
+
+		//boton que remueve una pregunta del cuestionario. solo la relacion
+		function Remove($idCuestionario,$idPregunta){
+			$this->db->where('cuestionario_idCuestionario', $idCuestionario);
+			$this->db->where('pregunta_idPregunta', $idPregunta);
+			$this->db->delete('pregunta_cuestionario'); 
+			if ($this->db->affected_rows() > 0) {
+				return true;
+			}
+			else{
+				return false;
+			}
+
+		}
+
 }
 	
 ?>

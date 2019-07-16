@@ -44,6 +44,9 @@ $route['Cuestionarios/update/:num'] = "cuestionariosController/actualizar";
 $route['Cuestionarios/delete/:num'] = "cuestionariosController/eliminar";
 
 $route['Cuestionarios/Preguntas'] = "cuestionariosController/obtenerPreguntas";
+$route['Cuestionarios/Preguntas/Agregar'] = "cuestionariosController/agregarPregunta";
+$route['Cuestionarios/Preguntas/Remover'] = "cuestionariosController/RemoverPregunta";
+
 
 // Preguntas
 $route['Preguntas'] = "preguntasController";

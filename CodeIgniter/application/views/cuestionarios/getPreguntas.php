@@ -7,6 +7,9 @@
    $url_respuestas = base_url() . "Cuestionarios/Preguntas/Respuestas/";
 
    $url_regresar = base_url() . "Cuestionarios";
+   $url_agregar = base_url()."Cuestionarios/Preguntas/Agregar";
+   $url_Remover = base_url()."Cuestionarios/Preguntas/Remover";
+    
 ?>
 
 <div align="center">
@@ -27,7 +30,7 @@
 
 
 
-   <div style="display: inline-block; width: 40%; margin: 30px;">
+   <div style=" width: 45%; padding: 15px; float: left;">
       <table class="table table-hover">
          <thead class="thead-light">
             <tr>
@@ -44,9 +47,11 @@
                      <td><?= $pregunta->pregunta?></td>
                      <td>
                         <div class="form-inline">
-                           <a href="#">
-                              <input class="btn btn-info" type="button" name="Agregar" value="->">
-                           </a>
+                           <form action="<?php echo $url_agregar ?>" method="POST">
+                              <input type="hidden" name="idCuestionario" value="<?php echo $idCuestionario?>">
+                              <input type="hidden" name="idPregunta" value="<?php echo $pregunta->idPregunta?>">
+                              <input class="btn btn-info" type="submit" name="Agregar" value="->">
+                           </form>
                         </div> 
                      </td>
                   </tr>
@@ -56,7 +61,7 @@
       </table>
    </div>
 
-   <div style="display: inline-block; width: 40%; margin: 30px;">
+   <div style=" width: 45%; padding: 10px; float: right;">
       <table class="table table-hover">
          <thead class="thead-light">
             <tr>
@@ -73,8 +78,10 @@
                      <td><?= $pregunta->pregunta?></td>
                      <td>
                         <div class="form-inline">
-                           <form>
-                              <input class="btn btn-danger" type="button" name="Eliminar" value="<-">
+                           <form action="<?php echo $url_Remover ?>" method="POST">
+                              <input type="hidden" name="idCuestionario" value="<?php echo $idCuestionario?>">
+                              <input type="hidden" name="idPregunta" value="<?php echo $pregunta->idPregunta?>">
+                              <input class="btn btn-danger" type="submit" name="Eliminar" value="<-">
                            </form>
                            <form>
                               <input class="btn btn-danger" type="button" name="Eliminar" value="Subir">
@@ -91,3 +98,6 @@
          </tbody>
       </table>
    </div>
+
+</body>
+</html>

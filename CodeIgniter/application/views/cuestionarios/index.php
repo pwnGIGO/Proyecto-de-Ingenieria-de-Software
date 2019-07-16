@@ -1,4 +1,4 @@
-<?php 
+<?php   
 	$ruta_ima_cuestionario = base_url()."assets/imagenes/cuestionario.png";
 	#para obtener la imagen, se crea la ruta completa para no generar algun error 
 	// Cuestionario
