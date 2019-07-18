@@ -17,6 +17,7 @@
 			$encuestas_url = base_url() . "Encuestas";
 			$cuestionario_url = base_url() . "Cuestionarios";
 			$preguntas_url = base_url() . "Preguntas";
+			$usuario_url = base_url() . "Usuario";
 		?>
 		<nav class="navbar navbar-expand navbar-dark bg-dark">
 			<a class="navbar-brand" href="<?php echo $inicio_url ?>">Contestar</a>
@@ -36,7 +37,7 @@
 						<a class="nav-link" href="<?php echo $preguntas_url ?>">Preguntas</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Usuario</a>
+						<a class="nav-link"  href="<?php echo $usuario_url ?>">Usuarios</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#">Roles</a>

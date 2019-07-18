@@ -1,3 +1,14 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+	</head>
+	<body>
 <?php   
 	$ruta_ima_cuestionario = base_url()."assets/imagenes/cuestionario.png";
 	#para obtener la imagen, se crea la ruta completa para no generar algun error 
@@ -20,8 +31,9 @@
 
 <div align="center">
 	<a href="<?php echo $url_crear ?>">
-		<input class="btn btn-success" type="button" name="submit" value="Crear Cuestionario">
-	</a>
+			 <button type="submit" class="btn btn-success" > Crear cuestionario  
+		 <span class="glyphicon glyphicon-plus"></span> 
+  		 </button>
 	<br><br>
 </div>
 
@@ -45,13 +57,15 @@
 					<br><br>
 					<p>
 						<a href="<?= $url_editar.$cuestionario->idCuestionario ?>">
-							<input class="btn btn-info" type="button" name="editar" value="Editar">
+								 <button type="button" class="btn btn-info" >
+ 							 <span class="glyphicon glyphicon-pencil"></span> 
+  							</button>
 						</a>
 					</p>
 
 					<p>
 						<a href="<?= $url_eliminar.$cuestionario->idCuestionario ?>">
-							<input class="btn btn-danger" type="button" name="eliminar" value="Eliminar">
+								<button type="button" class="btn btn-danger "> <span class="glyphicon glyphicon-trash"></span></button>
 						</a>
 					</p>
 				</div>    

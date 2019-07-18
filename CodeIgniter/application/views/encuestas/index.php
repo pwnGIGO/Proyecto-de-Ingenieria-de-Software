@@ -1,3 +1,14 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+	</head>
+	<body>
 		<div class="container">
 			<h3>Encuestas</h3>
 		</div>
@@ -9,8 +20,10 @@
 
 		<div align="center">
 			<a href="<?php echo $ruta_crearEncuesta ?>">
-				<input class="btn btn-success" type="button" name="submit" value="Crear Encuesta">
-			</a><br><br>
+				<button type="submit" class="btn btn-success" > Crear encuesta
+				<span class="glyphicon glyphicon-plus"></span> 
+                </button></a>			
+            </a><br><br>
 		<?php 
 			$ruta_ima_encuestas = base_url()."assets/imagenes/encuestas.png";
 			#para obtener la imagen, se crea la ruta completa para no generar algun error 
@@ -21,10 +34,10 @@
 					<a href="#"><img src="<?php echo $ruta_ima_encuestas ?>"></a>
 					<p>
 						<a href="<?php echo $ruta_eliminarEncuesta . $encuesta_aux->idEncuesta ?>">
-							<input class="btn btn-success" type="button" name="eliminar" value="Eliminar">
+							<button type="button" class="btn btn-danger "> <span class="glyphicon glyphicon-trash"></span></button>
 						</a>
 						<a href="#">
-							<input class="btn btn-success" type="button" name="editar" value="Editar">
+						 <button type="button" class="btn btn-info" ><span class="glyphicon glyphicon-pencil"></span></button>
 						</a>
 					</p>	
 				    <p>Inicia: <?= $encuesta_aux->fechaInicial ?></p>
