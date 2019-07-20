@@ -58,29 +58,36 @@
 
 		function delete($idCuestionario){
 				$dato['preguntas']=$this->pregunta_cuestionario_model->read($idCuestionario);
-				$query ='DELETE
+				
+				$query='DELETE
 						FROM cuestionario
 						WHERE idCuestionario ='.$idCuestionario.'';
-			    		$query = $this->db->query($query);
-							foreach ($dato['preguntas'] ->result() as $pregunta) {
-							echo $pregunta->idPregunta . "<br>";
-							$idQuestion=$pregunta->idPregunta;
-								$query ='DELETE
-									FROM pregunta
-									WHERE idPregunta ='.$pregunta->idPregunta.'';
-						    	$query = $this->db->query($query);
-						    	$dato1['respuestas']=$this->respuesta_model->read($idQuestion);
-						    	if($dato1['respuestas']){
-										foreach ($dato1['respuestas']->result() as $respuesta) {
-										echo $respuesta->idRespuesta . "<br>";
-											$query ='DELETE
-											FROM respuesta
-											WHERE idRespuesta ='.$respuesta->idRespuesta.'';
-								    		$query = $this->db->query($query);
-										}
-									}
+
+			    $query = $this->db->query($query);
+			    if($dato['preguntas']){
+					foreach ($dato['preguntas'] ->result() as $pregunta){
+						$idQuestion=$pregunta->idPregunta;
+						$query='DELETE
+								FROM pregunta
+								WHERE idPregunta ='.$pregunta->idPregunta.'';
+
+						$query = $this->db->query($query);
+						$dato1['respuestas']=$this->respuesta_model->read($idQuestion);
+						if($dato1['respuestas']){
+							foreach ($dato1['respuestas']->result() as $respuesta){
+								$query='DELETE
+										FROM respuesta
+										WHERE idRespuesta ='.$respuesta->idRespuesta.'';
+								$query = $this->db->query($query);
+							}
+						}
+					}
 				}
-				if(!empty($result)) return true; else { return false; } 	
+
+				if(!empty($result))
+					return true; 
+				else
+					return false;
 		}
 
 	}
