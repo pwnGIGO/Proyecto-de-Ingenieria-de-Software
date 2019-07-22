@@ -134,13 +134,26 @@
 		}
 
 		function actualizarView(){
-			$idEncuesta = $this->uri->segment(2);   
-			echo "Vista Actualizar Encuesta: " . $idEncuesta;
+			//$idEncuesta = $this->uri->segment(3);   
+			//echo "Vista Actualizar Encuesta: " . $idEncuesta;
+			$idEncuesta = $this->input->post('idEncuesta');
+		    $data['encuesta'] = $this->encuesta_model->get($idEncuesta);
+			$this->load->helper('form');
+            $this->load->view('layouts/header');
+		    $this->load->view('encuestas/update', $data);
 		}
 
 		function actualizar(){
-			$idEncuesta = $this->uri->segment(2);   
-			echo "Actualizar Encuesta: " . $idEncuesta;
+			//$idEncuesta = $this->uri->segment(2);   
+			//echo "Actualizar Encuesta: " . $idEncuesta;
+			$encuesta = $this->input->post('encuesta');
+			$idEncuesta = $this->input->post('idEncuesta');
+			$inicio = $this->input->post('fecha_inicio');
+			$fin = $this->input->post('fecha_fin');
+			$numEncuestas = $this->input->post('numero_encuestas');
+			$this->encuesta_model->update($idEncuesta, $encuesta, $inicio, $fin, $numEncuestas);
+
+			redirect(base_url() . "Encuestas");
 		}
 
 		function eliminar(){

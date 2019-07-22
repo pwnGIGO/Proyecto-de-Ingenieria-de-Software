@@ -3,11 +3,12 @@
 
 	$preguntaNueva = array(
 		'name' => 'pregunta',
-		'placeholder' => 'Escribe tu pregunta aqui',
+		'placeholder' => 'Escribe tu pregunta aquí.',
 		'required' => 'required',
 		'value' => $pregunta->result()[0]->pregunta,
 		'size' => '125',
-		'maxlength' => '100'
+		'maxlength' => '100',
+		'autocomplete' => 'off'
 	);
 	$regresar = base_url() . "Preguntas"; 
 	$idPregunta = $this->uri->segment(3);

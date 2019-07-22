@@ -17,6 +17,7 @@
 		<?php 
 			$ruta_crearEncuesta = base_url()."Encuestas/Crear";
 			$ruta_eliminarEncuesta = base_url()."Encuestas/delete/";
+			$ruta_editarEncuesta = base_url()."Encuestas/Editar";
  		?>
 
 		<div align="center">
@@ -37,9 +38,10 @@
 						<a href="<?php echo $ruta_eliminarEncuesta . $encuesta_aux->idEncuesta ?>">
 							<button type="button" class="btn btn-danger "> <span class="glyphicon glyphicon-trash"></span></button>
 						</a>
-						<a href="#">
-						 <button type="button" class="btn btn-info" ><span class="glyphicon glyphicon-pencil"></span></button>
-						</a>
+						<?= form_open($ruta_editarEncuesta)?>
+                           <input type="hidden" name="idEncuesta" value="<?php echo $encuesta_aux->idEncuesta?>">
+                           <input class="btn btn-info" type="submit" name="Editar" value="Editar">
+                        <?= form_close()?>
 					</p>	
 				    <p>Inicia: <?= $encuesta_aux->fechaInicial ?></p>
 				    <p>Finaliza: <?= $encuesta_aux->fechaFinal ?></p>
