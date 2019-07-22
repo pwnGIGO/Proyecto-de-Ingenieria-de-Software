@@ -52,8 +52,13 @@
 			else return false;	
 		}
 		
-		function update(){
-
+		function update($idCuestionario,$data){
+			$dato = array(
+				'nombreCuestionario' => $data['nombreCuestionario'],
+				'descripcionCuestionario' => $data['descripcionCuestionario']
+				);
+			$this->db->where('idCuestionario', $idCuestionario);
+			$query = $this->db->update('cuestionario', $dato);
 		}
 
 		function delete($idCuestionario){
