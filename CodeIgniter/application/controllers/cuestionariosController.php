@@ -35,13 +35,21 @@
 
 		// Vista para editar un cuestionario
 		function actualizarView(){ 
-			$idCuestionario = $this->uri->segment(3);   
-			echo "Vista Actualizar Cuestionario: " . $idCuestionario;
+			$data['id'] = $this->uri->segment(3);   
+		    $data['cuestionario'] = $this->cuestionario_model->get($data['id']);
+			$this->load->view('layouts/header');
+			$this->load->view('cuestionarios/update',$data);
 		}
+		 
 
 		function actualizar(){ 
 			$idCuestionario = $this->uri->segment(3);   
-			echo "Actualizar Cuestionario: " . $idCuestionario;
+			$data=array(
+                 'nombreCuestionario'=>$this->input->post('nombreCuestionario'),
+                 'descripcionCuestionario'=>$this->input->post('descripcion') );
+			$this->cuestionario_model->update($idCuestionario, $data);
+			redirect(base_url()."Cuestionarios");
+
 		}
 
 		function eliminar(){
