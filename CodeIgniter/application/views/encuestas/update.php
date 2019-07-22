@@ -65,11 +65,13 @@
 					<?= form_label('Numero de Encuestas: ') ?><br>
 					<?= form_input($numero_encuestas) ?><br><br>
 				<br><br>
-				<center><input type="submit" name="Actualizar" value="Actualizar" class="btn btn-info"></center>
+				<div align="center">
+					<input type="submit" name="Actualizar" value="Actualizar" class="btn btn-info">
+					<a href="<?php echo $regresar?>" >
+						<input type="button" name="regresar" value="Regresar" class="btn btn-warning">
+					</a>
+				</div>
 			<?= form_close()?>
-			<a href="<?php echo $regresar?>" >
-				<input type="button" name="regresar" value="Regresar" class="btn btn-warning">
-			</a>
 		</div>
 		<?php endif?>
 	</div>
