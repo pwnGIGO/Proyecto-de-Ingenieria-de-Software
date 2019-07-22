@@ -18,15 +18,6 @@
 			$this->db->insert('encuesta', $insert);
 		}
 
-		function get($id){
-			//devlver una sola encuesta
-			$this->db->where('idEncuesta', $id);
-			$query = $this->db->get('encuesta');
-			if ($query->num_rows() > 0) return $query;
-			else return false;
-			
-		}
-
 		function read(){
 			//obtiene todas las encuestas de la bd
 			$query = $this->db->get('encuesta');
