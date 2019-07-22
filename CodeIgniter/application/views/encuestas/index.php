@@ -9,8 +9,9 @@
 
 	</head>
 	<body>
-		<div class="container">
+		<div class="container" align="center">
 			<h3>Encuestas</h3>
+			<br>
 		</div>
 
 		<?php 
@@ -31,7 +32,7 @@
 				foreach ($encuestas->result() as $encuesta_aux) {  ?>
 				<div style="display: inline-block; margin:20px; text-align: left;">
 					<h4><?= $encuesta_aux->nombreEncuesta ?></h4>
-					<a href="#"><img src="<?php echo $ruta_ima_encuestas ?>"></a>
+					<img src="<?php echo $ruta_ima_encuestas ?>">
 					<p>
 						<a href="<?php echo $ruta_eliminarEncuesta . $encuesta_aux->idEncuesta ?>">
 							<button type="button" class="btn btn-danger "> <span class="glyphicon glyphicon-trash"></span></button>

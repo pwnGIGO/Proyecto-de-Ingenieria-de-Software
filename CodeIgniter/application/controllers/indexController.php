@@ -9,10 +9,6 @@ class indexController extends CI_Controller {
 		$this->load->view('index');
 	}
 
-	public function indexAdmin(){
-		
-		$this->load->view('layouts/header');
-		$this->load->view('inicio');
-	}
+	
 
 }

@@ -13,7 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	se refiere al metodo por default, el index
 */
 
-$route['404_override'] = '';
+$route['404_override'] = '';    
 $route['translate_uri_dashes'] = FALSE;
 
 /******************* USUARIO COMÚN ***********************/
@@ -22,7 +22,7 @@ $route['default_controller'] = 'indexController';
 /*******************USUARIO LOGEADO***********************/
 
 // Responder Encuestas
-$route['Inicio'] = 'indexController/indexAdmin';  
+$route['Inicio'] = 'encuestasController/indexAdmin';  
 
 
 /* Seccion de Encuestas*/
@@ -46,7 +46,7 @@ $route['Cuestionarios/delete/:num'] = "cuestionariosController/eliminar";
 $route['Cuestionarios/Preguntas'] = "cuestionariosController/obtenerPreguntas";
 $route['Cuestionarios/Preguntas/Agregar'] = "cuestionariosController/agregarPregunta";
 $route['Cuestionarios/Preguntas/Remover'] = "cuestionariosController/RemoverPregunta";
-
+  
 
 // Preguntas
 $route['Preguntas'] = "preguntasController";
@@ -68,6 +68,15 @@ $route['Preguntas/Respuestas/delete/:num'] = "respuestasController/eliminar";
 //Usuario
 $route['Usuario'] = "usuarioController";
 $route['Usuario/Crear'] = "usuarioController/crear";
+
+
+// Contestar Encuetas
+//Recibira el nombre de la encuesta
+$route['Aplicar_Encuesta'] = "encuestasController/detalles";
+//
+$route['Pregunta'] = "encuestasController/primer_Pregunta";
+$route['Siguiente'] = "encuestasController/Pregunta";
+
 
 
 
