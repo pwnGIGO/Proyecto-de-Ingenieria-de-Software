@@ -25,8 +25,25 @@
 			else return false;
 		}
 
-		function update(){
+		function get($id){
+			$this->db->where("idEncuesta", $id);
+			$query = $this->db->get('encuesta');
+			if($query->num_rows() > 0){
+				return $query;
+			}else{
+				return false;
+			}
+		}
 
+		function update($idEncuesta, $encuesta, $inicio, $fin, $numEncuestas){
+			$dato = array(
+				'nombreEncuesta' => $encuesta,
+				'fechaInicial' => $inicio,
+				'fechaFinal' => $fin,
+				'numeroCuestionarios' => $numEncuestas
+			);
+			$this->db->where('idEncuesta', $idEncuesta);
+			$query = $this->db->update('encuesta', $dato);
 		}
 
 		function delete($idEncuesta){

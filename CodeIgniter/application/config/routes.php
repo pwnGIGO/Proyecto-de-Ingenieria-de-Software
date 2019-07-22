@@ -29,8 +29,8 @@ $route['Inicio'] = 'indexController/indexAdmin';
 $route['Encuestas'] = "encuestasController";
 $route['Encuestas/Crear'] = "encuestasController/crearView";
 $route['Encuestas/create'] = "encuestasController/crear";
-$route['Encuestas/Editar/:num'] = "encuestasController/actualizarView";
-$route['Encuestas/update/:num'] = "encuestasController/actualizar";
+$route['Encuestas/Editar'] = "encuestasController/actualizarView";
+$route['Encuestas/update'] = "encuestasController/actualizar";
 $route['Encuestas/delete/:num'] = "encuestasController/eliminar";
 
 /* Seccion de Cuestionarios/Preguntas/Respuestas */
