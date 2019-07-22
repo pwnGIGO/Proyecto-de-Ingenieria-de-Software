@@ -15,17 +15,23 @@
 		<input type="hidden" name="num" value="<?php echo $num?>">
 
 			<?php
-
+				$dato =0;
 			//no me funciona bien el boostrap
 				foreach ($respuestas->result() as $respuesta) {?>
-
 					<div class="radio" style="">
-						<label class="radio"><?php echo $respuesta->respuesta ?>
-							<input  type="radio" value="<?php echo $respuesta->idRespuesta ?>">
-							<span class="checkround"></span>
-						</label>
+						<?php if($dato == 0) { $dato = 1 ?>
+							<label class="radio"><?php echo $respuesta->respuesta ?>
+								<input  type="radio" name="respuesta" value="<?php echo $respuesta->idRespuesta ?>" checked>
+								<span class="checkround"></span>
+							</label>
+						<?php }else{ ?>
+							<label class="radio"><?php echo $respuesta->respuesta ?>
+								<input  type="radio" name="respuesta" value="<?php echo $respuesta->idRespuesta ?>">
+								<span class="checkround"></span>
+							</label>
+						<?php } ?>
+							
 					</div>
-					
 			<?php } ?>
 
 		<br>
