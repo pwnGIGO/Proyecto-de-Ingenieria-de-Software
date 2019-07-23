@@ -1,82 +1,55 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<!-- Required meta tags -->
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<?php
+   $crearUsuario_url = base_url()."Usuario/Crear";
+   $editarUsuario_url = base_url() . "Usuario/Editar";
+   $eliminarUsuario_url = base_url() . "Usuario/delete/";
+  
+    
+     
+?>
 
-	</head>
-	<body>
-		<div class="container" >
-	
-<h1>Crear Usuario</h1><br><br>
-		
-		<?php
-			$crearUsuario_url = base_url()."Usuario/Crear";
-			// Atributos de la caja de texto
-			$nombre= array(
-				'name' => 'nombre',
-				'placeholder' => 'Nombre',
-				'required' => 'required',
-				'size' => '60'
-			);
-			$correo= array(
-				'name' => 'correo',
-				'placeholder' => 'Correo',
-				'required' => 'required',
-				'type' => 'email',
-				'size' => '60'
-			);
-			$password= array(
-				'name' => 'password',
-				'placeholder' => 'Password',
-				'required' => 'required',
-				'type' => 'password',
-				'size' => '60'
-			);
+<div align="center">
+   <h2>Usuarios</h2>
+</div><br>
 
+<div align="center">
+   <a href="<?php echo $crearUsuario_url?>">
+      <input class="btn btn-success" type="button" name="" value="Crear Usuario">
+   </a>
+</div><br><br>
 
-			
-			
-		?>
-
-		<div class="container" >
-			<?= form_open($crearUsuario_url) ?>
-				<div class="card indigo form-white">
-					
-						<div style="margin:25px; text-align: left;">
-							<i class="fa fa-envelope prefix white-text"></i>
-							<?= form_label('Nombre del usuario') ?>
-							<?= form_input($nombre) ?><br><br>
-
-							<?= form_label('Corrreo') ?>
-							<?= form_input($correo) ?><br><br>
-							
-							<?= form_label('Password') ?>
-							<?= form_input($password) ?><br><br>
-						
-				
-						</div>
-						
-						<div align="center">
-							 <button type="submit" class="btn btn-success" > Crear
- 							 <span class="glyphicon glyphicon-plus"></span> 
-  							</button>
-							       
-						</div><br><br>
-
-				</div>
-		<!-- Optional JavaScript -->
-		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-		
-		<br>
-
-
-			<?= form_close()?>
-		</div>
-
-</body>
-
-</html>
+<div class="container">
+   <table class="table table-hover">
+      <thead class="thead-light">
+         <tr>
+            <th scope="col">id</th>
+            <th scope="col">Nombre de usuario</th>
+             <th scope="col">Correo</th>
+            <th scope="col">Acción</th>
+         </tr>
+      </thead>
+      <tbody>
+         <?php if($usuarios != null):?>
+            <?php foreach ($usuarios->result() as $usuario) {?>
+               <tr>
+                  <td><?= $usuario->idUsuario?></td>
+                  <td><?= $usuario->nombreUsuario?></td>
+                   <td><?= $usuario->correoUsuario?></td>
+                  <td>
+                     <div class="form-inline">
+                        <!-- Editar Pregunta -->
+                        <?= form_open($editarUsuario_url)?>
+                           <input type="hidden" name="idUsuario" value="<?php echo $usuario->idUsuario?>">
+                           <input class="btn btn-info" type="submit" name="Editar" value="Editar">
+                        <?= form_close()?>
+                        <!-- Eliminar Pregunta -->
+                        <a href="<?php echo $eliminarUsuario_url . $usuario->idUsuario?>">
+                           <input class="btn btn-danger" type="button" name="Eliminar" value="Eliminar">
+                        </a>
+                     </div> 
+                  </td>
+               </tr>
+            <?php } ?>
+         <?php endif?>
+      </tbody>
+   </table>
+</div>

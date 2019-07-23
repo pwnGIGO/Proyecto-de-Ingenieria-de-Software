@@ -67,7 +67,12 @@ $route['Preguntas/Respuestas/delete/:num'] = "respuestasController/eliminar";
 
 //Usuario
 $route['Usuario'] = "usuarioController";
-$route['Usuario/Crear'] = "usuarioController/crear";
+$route['Usuario/:num'] = "usuarioController";
+$route['Usuario/Crear'] = "usuarioController/crearView";
+$route['Usuario/create'] = "usuarioController/crear";
+$route['Usuario/Editar'] = "usuarioController/actualizarView";
+$route['Usuario/update'] = "usuarioController/actualizar";
+$route['Usuario/delete/:num'] = "usuarioController/eliminar";
 
 
 
