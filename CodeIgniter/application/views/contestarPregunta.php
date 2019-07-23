@@ -4,10 +4,9 @@
 	<?php
 
 		$url_siguiente = base_url() . "Siguiente";
-		echo $num + 1 . " .-";
-        echo $pregunta->pregunta;
+		echo "<h2>".($num + 1) . " .-".$pregunta->pregunta."</h2>";
 	?>
-
+	<hr>
 	<form action="<?php echo $url_siguiente;?>" method="post">
 
 		<input type="hidden" name="idEncuesta" value="<?php echo $idEncuesta ?>">
@@ -18,19 +17,30 @@
 				$dato =0;
 			//no me funciona bien el boostrap
 				foreach ($respuestas->result() as $respuesta) {?>
+					<div class="row">
+					<div class="col-md-9 col-md-push-3">
+						
 					<div class="radio" style="">
 						<?php if($dato == 0) { $dato = 1 ?>
+							<h4>
+								
 							<label class="radio"><?php echo $respuesta->respuesta ?>
 								<input  type="radio" name="respuesta" value="<?php echo $respuesta->idRespuesta ?>" checked>
 								<span class="checkround"></span>
 							</label>
+							</h4>
 						<?php }else{ ?>
+							<h4>
+								
 							<label class="radio"><?php echo $respuesta->respuesta ?>
 								<input  type="radio" name="respuesta" value="<?php echo $respuesta->idRespuesta ?>">
 								<span class="checkround"></span>
 							</label>
+							</h4>
 						<?php } ?>
 							
+					</div>
+					</div>
 					</div>
 			<?php } ?>
 

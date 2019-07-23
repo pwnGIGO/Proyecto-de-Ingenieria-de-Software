@@ -17,10 +17,8 @@
 ?>
 <div class="container" align="center">
 
-	<h2>Encuesta:<br></h2>
-	<h3><?php echo $idEncuesta . ".- ". $nombreEncuesta?></h3>
-	<h2>Cuestionario:<br></h2>
-	<h3><?php echo $idCuestionario . ".- ". $nombreCuestionario?></h3>
+	<h2><?php echo $nombreEncuesta?></h2>
+	<h3><?php echo $nombreCuestionario?></h3>
 	<h4><?php echo $descripcion?></h4>
 
 	<form action="<?php echo base_url(). "Pregunta"?>" method = "POST">
